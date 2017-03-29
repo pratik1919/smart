@@ -1,0 +1,13 @@
+ReWriteEngine On
+
+RewriteRule ^addCategory?$ addCategory.php
+RewriteRule ^addItemView?$ addItemView.php
+RewriteRule ^changePassword?$ changePassword.php
+RewriteRule ^deliveryStatus?$ deliveryStatus.php
+RewriteRule ^error?$ error.php
+RewriteRule ^login?$ login.php
+RewriteRule ^logout?$ logout.php
+RewriteRule ^order?$ order.php
+RewriteRule ^password?$ password.php
+RewriteRule ^resetPassword?$ resetPassword.php
+RewriteRule ^showOrderTable?$ showOrderTable.php

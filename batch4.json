@@ -1,0 +1,195 @@
+{
+		batch4: [
+			{
+				day1: [
+					{
+						period: "Period 1",
+						subject: "Digital Logic",
+						time: "8:10 A.M. - 9:50 A.M."
+					},
+					{
+						period: "Period 2",
+						subject: "Discrete Structures",
+						time: "10:10 A.M. - 11:00 A.M."
+					},
+					{
+						period: "Period 3",
+						subject: "Microprocessor",
+						time: "11:00 A.M. - 11:50 A.M."
+					},
+					{
+						period: "Lunch Break",
+						subject: "NA",
+						time: "11:50 A.M. - 12:40 P.M."
+					},
+					{
+						period: "Period 4",
+						subject: "Data Structures and Algorithms",
+						time: "12:40 P.M. - 2:20 P.M."
+					},
+					{
+						period: "Period 5",
+						subject: "Linear Algebra",
+						time: "2:20 P.M. - 4:00 P.M."
+					},
+					{
+						period: "Period 6",
+						subject: "Statistics",
+						time: "4:00 P.M. - 4:50 P.M."
+					}
+				]
+			},{
+				day2: [
+					{
+						period: "Period 1",
+						subject: "Linear Algebra",
+						time: "8:10 A.M. - 9:50 A.M."
+					},
+					{
+						period: "Period 2",
+						subject: "Discrete Structures",
+						time: "10:10 A.M. - 11:00 A.M."
+					},
+					{
+						period: "Period 3",
+						subject: "Microprocessor",
+						time: "11:00 A.M. - 11:50 A.M."
+					},
+					{
+						period: "Lunch Break",
+						subject: "NA",
+						time: "11:50 A.M. - 12:40 P.M."
+					},
+					{
+						period: "Period 4",
+						subject: "Data Structures and Algorithms",
+						time: "12:40 P.M. - 2:20 P.M."
+					},
+					{
+						period: "Period 5",
+						subject: "Digital Logic",
+						time: "2:20 P.M. - 4:00 P.M."
+					},
+					{
+						period: "Period 6",
+						subject: "Statistics",
+						time: "4:00 P.M. - 4:50 P.M."
+					}
+				]
+			},{
+				day3: [
+					{
+						period: "Period 1",
+						subject: "Discrete Structures",
+						time: "8:10 A.M. - 9:50 A.M."
+					},
+					{
+						period: "Period 2",
+						subject: "Digital Logic",
+						time: "10:10 A.M. - 11:00 A.M."
+					},
+					{
+						period: "Period 3",
+						subject: "Microprocessor",
+						time: "11:00 A.M. - 11:50 A.M."
+					},
+					{
+						period: "Lunch Break",
+						subject: "NA",
+						time: "11:50 A.M. - 12:40 P.M."
+					},
+					{
+						period: "Period 4",
+						subject: "Data Structures and Algorithms",
+						time: "12:40 P.M. - 2:20 P.M."
+					},
+					{
+						period: "Period 5",
+						subject: "Linear Algebra",
+						time: "2:20 P.M. - 4:00 P.M."
+					},
+					{
+						period: "Period 6",
+						subject: "Statistics",
+						time: "4:00 P.M. - 4:50 P.M."
+					}
+				]
+			},{
+				day4: [
+					{
+						period: "Period 1",
+						subject: "Microprocessor",
+						time: "8:10 A.M. - 9:50 A.M."
+					},
+					{
+						period: "Period 2",
+						subject: "Discrete Structures",
+						time: "10:10 A.M. - 11:00 A.M."
+					},
+					{
+						period: "Period 3",
+						subject: "Digital Logic",
+						time: "11:00 A.M. - 11:50 A.M."
+					},
+					{
+						period: "Lunch Break",
+						subject: "NA",
+						time: "11:50 A.M. - 12:40 P.M."
+					},
+					{
+						period: "Period 4",
+						subject: "Data Structures and Algorithms",
+						time: "12:40 P.M. - 2:20 P.M."
+					},
+					{
+						period: "Period 5",
+						subject: "Linear Algebra",
+						time: "2:20 P.M. - 4:00 P.M."
+					},
+					{
+						period: "Period 6",
+						subject: "Statistics",
+						time: "4:00 P.M. - 4:50 P.M."
+					}
+				]
+			},{
+				day5: [
+					{
+						period: "Period 1",
+						subject: "Data Structures and Algorithms",
+						time: "8:10 A.M. - 9:50 A.M."
+					},
+					{
+						period: "Period 2",
+						subject: "Discrete Structures",
+						time: "10:10 A.M. - 11:00 A.M."
+					},
+					{
+						period: "Period 3",
+						subject: "Microprocessor",
+						time: "11:00 A.M. - 11:50 A.M."
+					},
+					{
+						period: "Lunch Break",
+						subject: "NA",
+						time: "11:50 A.M. - 12:40 P.M."
+					},
+					{
+						period: "Period 4",
+						subject: "Digital Logic",
+						time: "12:40 P.M. - 2:20 P.M."
+					},
+					{
+						period: "Period 5",
+						subject: "Linear Algebra",
+						time: "2:20 P.M. - 4:00 P.M."
+					},
+					{
+						period: "Period 6",
+						subject: "Statistics",
+						time: "4:00 P.M. - 4:50 P.M."
+					}
+				]
+			}
+    	]
+}
