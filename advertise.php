@@ -6,7 +6,7 @@
  * Time: 6:10 PM
  */
 include('../../common/common.php');
-include('../../config/DatabaseConnection.php');
+include('../../config/db_connect.php');
 
 if (empty($_SESSION['username'])) {
     header("Location: login.php");
@@ -18,14 +18,14 @@ if (empty($_SESSION['username'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
-    <script src="../../javascript/advertisement.js" type="text/javascript"></script>
+    <script src="js/advertisement.js" type="text/javascript"></script>
 </head>
 
 <body>
 
 <div class="wrapper"
      style="background: rgba(202, 83, 63, 0.27); color: #630b0b; display: flex; align-items: center; justify-content: center;">
-    <?php require('../layout/adminMenu.php') ?>
+    <?php require('../layout/a_menu.php') ?>
 
     <div class="container">
 
@@ -70,7 +70,7 @@ if (empty($_SESSION['username'])) {
             <fieldset>
                 <legend>Set Advertisement Links</legend>
             </fieldset>
-            <form method="post" action="../../controller/advertisement.php" enctype="multipart/form-data" role="form" style="padding: 20px;">
+            <form method="post" action="controller/advertisement.php" enctype="multipart/form-data" role="form" style="padding: 20px;">
                 <input type="hidden" name="insert-ad" id="insert-ad" value="add">
                 <input type="hidden" name="ad_id" id="ad_id">
                 <div class="form-group">
@@ -111,7 +111,7 @@ if (empty($_SESSION['username'])) {
 
         </div>
     </div>
-    <?php require('../layout/adminFooter.php'); ?>
+    <?php require('../layout/a_footer.php'); ?>
 </div>
 </body>
 </html>

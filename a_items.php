@@ -1,7 +1,7 @@
 <?php
 session_start();
-include('../../common/common.php');
-include('../../config/DatabaseConnection.php');
+include('common/common.php');
+include('config/db_connect.php');
 
 if(empty($_SESSION['username'])) {
     header("Location: login.php");
@@ -15,8 +15,8 @@ if(empty($_SESSION['username'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
-    <link rel="icon" href="../../img/csnLogo.png" type="image/png" sizes="16x16">
-    <link href="../../css/jquery.dataTables.min.css" type="text/css">
+    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <link href="css/jquery.dataTables.min.css" type="text/css">
 
 </head>
 
@@ -24,11 +24,7 @@ if(empty($_SESSION['username'])) {
 
 <div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
 
-
-
-    <?php require('../layout/adminMenu.php') ?>
-
-
+    <?php require('a_menu.php') ?>
 
     <!-- Modal -->
     <div id="AddProduct" class="fade modal" role="dialog">
@@ -44,7 +40,7 @@ if(empty($_SESSION['username'])) {
                     <fieldset>
                         <!--                            <legend>Add New Product</legend>-->
 
-                        <form class="form-horizontal" id="item_form" enctype="multipart/form-data" action="../../controller/item.php" method="post">
+                        <form class="form-horizontal" id="item_form" enctype="multipart/form-data" action="controller/item.php" method="post">
                             <div class="row">
                                 <input type="hidden" id="item-insert" name="formType" value="add">
                                 <input type="hidden" id="item_id" name="item_id">
@@ -155,100 +151,96 @@ if(empty($_SESSION['username'])) {
         </div>
         <div class="row" style="margin-top: 25px;">
 
-        <div class="row" style="margin-top: 25px; padding: 25px; background-color: rgba(248, 248, 248, 0.8);">
-            <table id="item_table" class="table table-striped" cellspacing="0" width="100%">
-                <thead>
-                <tr>
-                    <th>Product name</th>
-                    <th>Actual Price</th>
-                    <th>Discounted Price</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                <?php
-
-                $itemList =  getAllProduct($connection);
-
-                foreach($itemList as $item){?>
+            <div class="row" style="margin-top: 25px; padding: 25px; background-color: rgba(248, 248, 248, 0.8);">
+                <table id="item_table" class="table table-striped" cellspacing="0" width="100%">
+                    <thead>
                     <tr>
-                        <td><?php echo $item["item_name"] ?></td>
-                        <td><?php echo $item["price"]?></td>
-                        <td><?php echo $item["discounted_price"]?></td>
-                        <td><button class="btn btn-default" onclick="return deleteItem(<?php echo $item["id"]?>)"><span class="glyphicon glyphicon-trash"></span></button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default" onclick=" return editItem(<?php echo $item['id'] ?>)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                        <th>Product name</th>
+                        <th>Actual Price</th>
+                        <th>Discounted Price</th>
+                        <th>Action</th>
                     </tr>
-                <?php
-                }
-                ?>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
+                    <?php
+
+                    $itemList =  getAllProduct($connection);
+
+                    foreach($itemList as $item){?>
+                        <tr>
+                            <td><?php echo $item["item_name"] ?></td>
+                            <td><?php echo $item["price"]?></td>
+                            <td><?php echo $item["discounted_price"]?></td>
+                            <td><button class="btn btn-default" onclick="return deleteItem(<?php echo $item["id"]?>)"><span class="glyphicon glyphicon-trash"></span></button>&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-default" onclick=" return editItem(<?php echo $item['id'] ?>)"><span class="glyphicon glyphicon-pencil"></span></button></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+
+                    </tbody>
+                </table>
+            </div>
         </div>
+
+        <?php require('a_footer.php') ?>
     </div>
 
+    <script>
 
+        $('#itemButton').click(function(){
 
-
-
-    <?php require('../layout/adminFooter.php') ?>
-</div>
-
-<script>
-
-    $('#itemButton').click(function(){
-
-        $('#AddProduct').modal('show');
-        $('#AddProduct .modal-title').html('Add Product');
-        $('#AddProduct button[type=submit]').html("Add");
-        $('#item-insert').attr('value','add');
-        $('#item_id').removeAttr('value');
-    });
-
-    $('#item_table').DataTable(
-        {
-            "lengthMenu": [[6,12,24,-1],[6,12,24,"ALL"]]
-        }
-    );
-
-    $('#discount').on('change',function(){
-
-        var price = parseFloat($('#price').val());
-        var discount = parseFloat($('#discount').val());
-
-        var discountPrice = price - (discount/100)*price;
-
-        $('#discountedPrice').attr("value",discountPrice)
-    });
-
-
-    $('#category-id').on('change',function(){
-
-        var e = document.getElementById("category-id");
-        var cat = e.options[e.selectedIndex].value;
-
-        var mode = "select";
-
-        $.ajax({
-            type:"POST",
-            url:'../../controller/subcategory.php',
-            data:"formType="+mode+"&id="+cat,
-            success:function(data){
-                var data = JSON.parse(data);
-                $('#sub_category_id').empty();
-                for(var i = 0; i < data.length; i++){
-
-                    var sub_cat = "<option value='" +data[i].id+ "'>"+data[i].sub_category_name+"</option>";
-                    $('#sub_category_id').append(sub_cat);
-                }
-
-
-            },error: function (er) {
-                alert("Error while Creating" +er);
-            }
+            $('#AddProduct').modal('show');
+            $('#AddProduct .modal-title').html('Add Product');
+            $('#AddProduct button[type=submit]').html("Add");
+            $('#item-insert').attr('value','add');
+            $('#item_id').removeAttr('value');
         });
-    })
-</script>
+
+        $('#item_table').DataTable(
+            {
+                "lengthMenu": [[6,12,24,-1],[6,12,24,"ALL"]]
+            }
+        );
+
+        $('#discount').on('change',function(){
+
+            var price = parseFloat($('#price').val());
+            var discount = parseFloat($('#discount').val());
+
+            var discountPrice = price - (discount/100)*price;
+
+            $('#discountedPrice').attr("value",discountPrice)
+        });
+
+
+        $('#category-id').on('change',function(){
+
+            var e = document.getElementById("category-id");
+            var cat = e.options[e.selectedIndex].value;
+
+            var mode = "select";
+
+            $.ajax({
+                type:"POST",
+                url:'../../controller/subcategory.php',
+                data:"formType="+mode+"&id="+cat,
+                success:function(data){
+                    var data = JSON.parse(data);
+                    $('#sub_category_id').empty();
+                    for(var i = 0; i < data.length; i++){
+
+                        var sub_cat = "<option value='" +data[i].id+ "'>"+data[i].sub_category_name+"</option>";
+                        $('#sub_category_id').append(sub_cat);
+                    }
+
+
+                },error: function (er) {
+                    alert("Error while Creating" +er);
+                }
+            });
+        })
+    </script>
 
 </body>
 </html>

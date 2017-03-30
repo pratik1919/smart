@@ -7,13 +7,13 @@
  */
 ?>
 <?php
-include("../../config/DatabaseConnection.php");
-include('../../common/common.php');
+include("config/db_connect.php");
+include('common/common.php');
 
 //session_start();
 //
 //if(!empty($_SESSION['login_user'])){
-//    header("Location: addCategory.php");
+//    header("Location: a_category.php");
 //}
 
 if(empty($_SESSION['username'])){
@@ -27,7 +27,7 @@ if(empty($_SESSION['username'])){
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
 
-        <link rel="icon" href="../../img/csnLogo.png" type="image/png" sizes="16x16">
+        <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
 
     <script>
         function showMes(){
@@ -118,7 +118,7 @@ if(empty($_SESSION['username'])){
         </div>
     </div>
 
-    <?php require('../layout/adminMenu.php') ?>
+    <?php require('a_menu.php') ?>
 
     <div class="container" style="width: 700px;">
         <div class="row" style="margin-bottom: 20px;">
@@ -188,7 +188,7 @@ if(empty($_SESSION['username'])){
 
     </script>
 
-    <?php require('../layout/adminFooter.php') ?>
+    <?php require('a_footer.php') ?>
 </div>
 </body>
 </html>

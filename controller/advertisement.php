@@ -5,7 +5,7 @@
  * Date: 7/3/16
  * Time: 7:27 PM
  */
-include('../config/DatabaseConnection.php');
+include('../config/db_connect.php');
 include('../common/common.php');
 
 if(isset($_POST['advertisement'])){
