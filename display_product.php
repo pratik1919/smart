@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include("../../config/DatabaseConnection.php");
+include("config/db_connect.php");
 
 $i_id = $_GET['p_id'];
 
@@ -25,7 +25,7 @@ if (mysqli_num_rows($result) > 0) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
- <link rel="icon" href="../../img/csnLogo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
     <script type="text/javascript">
 
         function validate(){
@@ -89,25 +89,25 @@ if (mysqli_num_rows($result) > 0) {
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
 
 
-    <?php require('../layout/header.php') ?>
+    <?php require('header.php') ?>
     <div class="row" style="height: 100px"></div>
 
     <div class="add" style="float:left; left: 1px;">
-       <?php $advertisement = getAdvertisement($connection,0);
+        <?php $advertisement = getAdvertisement($connection,0);
 
-       ?>
+        ?>
         <?php if($advertisement!=null){ ?>
 
-        <img src="../../advertisement/<?php echo $advertisement['advertise_image']?>">
+            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
 
         <?php } ?>
     </div>
@@ -119,7 +119,7 @@ fjs.parentNode.insertBefore(js, fjs);
         ?>
         <?php if($advertisement){ ?>
 
-            <img src="../../advertisement/<?php echo $advertisement['advertise_image']?>">
+            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
 
         <?php } ?>
     </div>
@@ -129,36 +129,36 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="row">
             <div class="col-lg-4">
                 <div class="product">
-                    <img class="magniflier" src="../../itemImages/<?php echo $item_image?>" height="450px" width="100%"/>
+                    <img class="magniflier" src="itemImages/<?php echo $item_image?>" height="450px" width="100%"/>
                 </div>
             </div>
             <div class="col-lg-4"
                  style="font-family: 'Comfortaa', cursive; color: white; background-color: rgba(49, 63, 59, 0.58);">
                 <h1><?php echo $item_name?></h1>
-               <div class="row">
-               <div class="col-md-6">
-               <h5 style="color: red;"><strong>Rs <strike><?php echo $item_price?>/-</strike></strong></h5>
-               <h4><?php echo $item_discounted_price?>/-</h4>
-               </div>
-               <div class="col-lg-6" style="text-align: right;">
-                   <!-- Your share button code -->
-                   <div class="fb-share-button"
-                        data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
-                        data-layout="button_count">
-                   </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 style="color: red;"><strong>Rs <strike><?php echo $item_price?>/-</strike></strong></h5>
+                        <h4><?php echo $item_discounted_price?>/-</h4>
+                    </div>
+                    <div class="col-lg-6" style="text-align: right;">
+                        <!-- Your share button code -->
+                        <div class="fb-share-button"
+                             data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
+                             data-layout="button_count">
+                        </div>
 
-               </div>
-               </div>                <h2>Description</h2>
+                    </div>
+                </div>                <h2>Description</h2>
                 <p style="font-family: 'Comfortaa', cursive;"><?php echo $item_description?> </p>
             </div>
             <div class="col-lg-4">
                 <fieldset>
                     <legend>Order Now</legend>
 
-                    <form method="post" action="../admin/order.php" class="form-horizontal" onsubmit="return validate()">
+                    <form method="post" action="order.php" class="form-horizontal" onsubmit="return validate()">
                         <div class="form-group">
                             <label class="control-label col-sm-4">Delivery Address<span
-                                    style="color:red;"> *</span></label>
+                                        style="color:red;"> *</span></label>
 
                             <div class="col-sm-8">
                                 <input type="hidden" name="p_id" value="<?php echo $_GET['p_id'] ?>"/>
@@ -222,99 +222,99 @@ fjs.parentNode.insertBefore(js, fjs);
         <h3 id="catagory" style="font-family: 'Pacifico', cursive;">You May also like</h3>
 
 
-            <div class="row">
-              
-                <div class="clearfix">
-                    <div id="<?php echo $pro_category_name ?>" class="carousel slide" data-interval="false">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                 <?php
+        <div class="row">
 
-                                $category = getCategoryByItem($connection,$_GET['p_id']);
+            <div class="clearfix">
+                <div id="<?php echo $pro_category_name ?>" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <?php
 
-                                $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
+                            $category = getCategoryByItem($connection,$_GET['p_id']);
 
-                                $counter = 0;
-                                foreach($likeList as $item){
+                            $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
+
+                            $counter = 0;
+                            foreach($likeList as $item){
                                 ?>
 
-                                    <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
-                                        <div id="box"
-                                             style="background-image: url('../../itemImages/<?php echo $item['image'] ?>')">
-                                            <div id="overlay">
-                                                <a href="displayProductView.php?p_id=<?php echo $item['id'] ?>">
-                                                    <button class="btn btn-success"><span
+                                <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
+                                    <div id="box"
+                                         style="background-image: url('itemImages/<?php echo $item['image'] ?>')">
+                                        <div id="overlay">
+                                            <a href="display_product.php?p_id=<?php echo $item['id'] ?>">
+                                                <button class="btn btn-success"><span
                                                             class="glyphicon glyphicon-eye-open"></span> View
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div style="text-align: center;">
-                                            <h3><?php echo $item['item_name'] ?></h3>
-                                            <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
-                                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
-
-                                    <?php
-                                    $counter++;
-                                }
-                                ?>
-                            </div>
-                            <!-- /item -->
-
-                            <div class="item">
-                                 <?php
-
-                                $category = getCategoryByItem($connection,$_GET['p_id']);
-
-                                $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
-
-                                $counter = 0;
-                                foreach($likeList as $item){
-                                ?>
-
-                                    <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
-                                        <div id="box"
-                                             style="background-image: url('../../itemImages/<?php echo $item['image'] ?>')">
-                                            <div id="overlay">
-                                                <a href="displayProductView.php?p_id=<?php echo $item['item_name'] ?>">
-                                                    <button class="btn btn-success"><span
-                                                            class="glyphicon glyphicon-eye-open"></span> View
-                                                    </button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div style="text-align: center;">
-                                            <h3><?php echo $item['item_name'] ?></h3>
-                                            <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
-                                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
-                                        </div>
+                                    <div style="text-align: center;">
+                                        <h3><?php echo $item['item_name'] ?></h3>
+                                        <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
+                                        <h5>Rs <?php echo $item['discounted_price'] ?></h5>
                                     </div>
+                                </div>
 
-                                    <?php
-                                    $counter++;
-                                }
-                                ?>
-                            </div>
-                            <!-- /item -->
-
+                                <?php
+                                $counter++;
+                            }
+                            ?>
                         </div>
-                        <!-- /carousel-inner -->
-                        <a class="left carousel-control" href="#<?php echo $pro_category_name ?>" role="button"
-                           style="width: 0px;" data-slide="prev">
-                            <span class="glyphicon glyphicon-chevron-left slider"></span>
-                        </a>
-                        <a class="right carousel-control" href="#<?php echo $pro_category_name ?>" style="width: 0px;"
-                           role="button" data-slide="next">
-                            <span class="glyphicon glyphicon-chevron-right slider"></span>
-                        </a>
+                        <!-- /item -->
+
+                        <div class="item">
+                            <?php
+
+                            $category = getCategoryByItem($connection,$_GET['p_id']);
+
+                            $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
+
+                            $counter = 0;
+                            foreach($likeList as $item){
+                                ?>
+
+                                <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
+                                    <div id="box"
+                                         style="background-image: url('../../itemImages/<?php echo $item['image'] ?>')">
+                                        <div id="overlay">
+                                            <a href="display_product.php?p_id=<?php echo $item['item_name'] ?>">
+                                                <button class="btn btn-success"><span
+                                                            class="glyphicon glyphicon-eye-open"></span> View
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div style="text-align: center;">
+                                        <h3><?php echo $item['item_name'] ?></h3>
+                                        <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
+                                        <h5>Rs <?php echo $item['discounted_price'] ?></h5>
+                                    </div>
+                                </div>
+
+                                <?php
+                                $counter++;
+                            }
+                            ?>
+                        </div>
+                        <!-- /item -->
+
                     </div>
-                    <!-- /thumbcarousel -->
+                    <!-- /carousel-inner -->
+                    <a class="left carousel-control" href="#<?php echo $pro_category_name ?>" role="button"
+                       style="width: 0px;" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left slider"></span>
+                    </a>
+                    <a class="right carousel-control" href="#<?php echo $pro_category_name ?>" style="width: 0px;"
+                       role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right slider"></span>
+                    </a>
                 </div>
-                <!-- /clearfix -->
+                <!-- /thumbcarousel -->
             </div>
-      
+            <!-- /clearfix -->
+        </div>
+
     </div>
 
     <script type="text/javascript">
@@ -481,7 +481,7 @@ fjs.parentNode.insertBefore(js, fjs);
 
     <div style="height: 650px;"></div>
 
-    <?php require('../layout/footer.php') ?>
+    <?php require('footer.php') ?>
 </div>
 </body>
 </html>

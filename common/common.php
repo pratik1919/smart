@@ -7,9 +7,7 @@
  * Date: 6/11/16
  * Time: 6:27 PM
  */
-
 session_start();
-
 function checkLogin($connection,$username,$password){
 
     $password = md5($password);
@@ -166,6 +164,28 @@ function getCategory($connection){
     $result = mysqli_query($connection,$select_category);
 
     return $result;
+}
+
+function getProductCount($connection, $pro_id){
+    $select_item = "SELECT COUNT(*) from item WHERE c_id = $pro_id";
+
+    $count = mysqli_query($connection,$select_item);
+
+    if(mysqli_fetch_row($count) > 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+function getSubcategoryCount($connection, $sub_cat_id, $cat_id){
+
+    $select_item = mysqli_query($connection, "SELECT COUNT(*) as total from item WHERE s_id = $sub_cat_id AND c_id = $cat_id");
+
+    $data = mysqli_fetch_assoc($select_item);
+
+    return $data['total'];
 }
 
 function addCategory($connection,$categoryName){

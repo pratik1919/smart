@@ -1,19 +1,19 @@
 <?php
     include("../../common/common.php");
-    include("../../config/DatabaseConnection.php");
+    include("../../config/db_connect.php");
 
 ?>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
-    <link rel="icon" href="../../img/csnLogo.png" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="../../css/style.css" type="text/css">
+    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <!--<link rel="stylesheet" href="../css/imageHoverStylesheet.css" type="text/css">-->
-    <script type="text/javascript" src="../../javascript/jquery-1.12.4.min.js"></script>
-    <link href="../../bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
 <!--    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>-->
-    <script src="../../bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
 
     <!--fonts-->
 
@@ -30,7 +30,7 @@
 <div class="container" style="display: flex; height: 80%; justify-content: center; align-items: center;">
 
 
-    <form class="form-signin loginForm" method="post" action="../../controller/auth.php" enctype="multipart/form-data">
+    <form class="form-signin loginForm" method="post" action="controller/auth.php" enctype="multipart/form-data">
         <input type="hidden" value="change" name="formType">
         <h2 style=" text-align: center; font-family: 'Pacifico', cursive;">Care Shop Nepal</h2>
         <lable class="control-label" >Username and Password has been sent to  account</lable>

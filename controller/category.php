@@ -6,7 +6,7 @@
  * Time: 1:45 PM
  */
 
-include('../config/DatabaseConnection.php');
+include('../config/db_connect.php');
 include('../common/common.php');
 
 if($_POST['formType']=='add'){

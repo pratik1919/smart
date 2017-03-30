@@ -3414,7 +3414,7 @@ class PHPMailer
     {
         $mimes = array(
             'xl'    => 'application/excel',
-            'js'    => 'application/javascript',
+            'js'    => 'application/js',
             'hqx'   => 'application/mac-binhex40',
             'cpt'   => 'application/mac-compactpro',
             'bin'   => 'application/macbinary',
