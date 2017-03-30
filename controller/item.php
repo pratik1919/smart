@@ -6,7 +6,7 @@
  * Time: 3:45 PM
  */
 
-include('../config/DatabaseConnection.php');
+include('../config/db_connect.php');
 include('../common/common.php');
 
 if($_POST['formType']=='add'){
@@ -31,7 +31,7 @@ if($_POST['formType']=='add'){
 
     $result = addItem($connection,$item,$cat_id,$s_cat_id,$item_size,$description,$color,$price,$discount,$discountedPrice,$item_image);
 
-    header("Location:../view/admin/addItemView.php");
+    header("Location:../view/admin/a_items.php");
 }
 
 else if($_POST['formType']=='edit'){
@@ -70,7 +70,7 @@ else if($_POST['formType']=='update'){
     $result = updateProduct($connection,$item,$cat_id,$s_cat_id,$item_size,$description,$color,$price,$discount,$discountedPrice,$item_image,$item_id);
 
    
-    header("Location:../view/admin/addItemView.php");
+    header("Location:../view/admin/a_items.php");
 
 }
 else if($_POST['formType']=='delete'){
