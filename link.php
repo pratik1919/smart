@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper" style="background: #E57373; color: #630b0b;">
 <?php require('a_menu.php') ?>
 
     <fieldset>

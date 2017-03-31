@@ -15,7 +15,8 @@
     <meta charset="UTF-8">
         <title>Smart Gallery</title>
         <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
-        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <link rel="stylesheet" href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
         <!--<link rel="stylesheet" href="../css/imageHoverStylesheet.css" type="text/css">-->
         <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
         <script src="js/subcategory.js" type="text/javascript"></script>
@@ -35,7 +36,7 @@
         <!--fonts-->
 </head>
 
-<body background="img/PolygonalBackground.jpg" style="background-size: cover; background-position: center; background-attachment: fixed;">
+<!--<body background="img/PolygonalBackground.jpg" style="background-size: cover; background-position: center; background-attachment: fixed;">-->
 
 
 <nav class = "navbar navbar-default menu navbar-fixed-top" role = "navigation" style=" padding-right: 25px;">

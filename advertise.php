@@ -5,8 +5,8 @@
  * Date: 7/3/2016
  * Time: 6:10 PM
  */
-include('../../common/common.php');
-include('../../config/db_connect.php');
+include('common/common.php');
+include('config/db_connect.php');
 
 if (empty($_SESSION['username'])) {
     header("Location: login.php");
@@ -23,9 +23,8 @@ if (empty($_SESSION['username'])) {
 
 <body>
 
-<div class="wrapper"
-     style="background: rgba(202, 83, 63, 0.27); color: #630b0b; display: flex; align-items: center; justify-content: center;">
-    <?php require('../layout/a_menu.php') ?>
+<div class="wrapper" style="background: #E57373; color: #630b0b; display: flex; align-items: center; justify-content: center;">
+    <?php require('a_menu.php') ?>
 
     <div class="container">
 
@@ -111,7 +110,7 @@ if (empty($_SESSION['username'])) {
 
         </div>
     </div>
-    <?php require('../layout/a_footer.php'); ?>
+    <?php require('a_footer.php'); ?>
 </div>
 </body>
 </html>

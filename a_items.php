@@ -16,13 +16,13 @@ if(empty($_SESSION['username'])) {
     <meta charset="UTF-8">
     <title>CareShopNepal</title>
     <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
-    <link href="css/jquery.dataTables.min.css" type="text/css">
+    <link href="css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper" style="background:#E57373;">
 
     <?php require('a_menu.php') ?>
 
@@ -146,13 +146,12 @@ if(empty($_SESSION['username'])) {
     <div class="container">
         <div class="row">
             <!-- Trigger the modal with a button -->
-            <button type="button" class="btn btn-default" id="itemButton" >Add Product
-            </button>
+            <button type="button" class="btn btn-default" id="itemButton" >Add Product</button>
         </div>
         <div class="row" style="margin-top: 25px;">
 
             <div class="row" style="margin-top: 25px; padding: 25px; background-color: rgba(248, 248, 248, 0.8);">
-                <table id="item_table" class="table table-striped" cellspacing="0" width="100%">
+                <table id="item_table" class="display" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>Product name</th>
