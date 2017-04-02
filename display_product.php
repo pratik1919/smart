@@ -95,7 +95,7 @@ if (mysqli_num_rows($result) > 0) {
         js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper">
 
 
     <?php require('header.php') ?>

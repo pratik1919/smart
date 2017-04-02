@@ -7,6 +7,7 @@
  */
 
 include("config/db_connect.php");
+//include("common/common.php");
 ?>
 
 <html>
@@ -17,9 +18,18 @@ include("config/db_connect.php");
 </head>
 <body>
 
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper">
     <?php include('header.php') ?>
-    <div style="height: 150px;"></div>
+    <div class="subCatMenu">
+        <?php
+        $s_cat = subcat($_GET['id'], $connection);
+        while ($row = $s_cat->fetch_assoc()){
+            ?>
+            <a href="sub_cat_show.php?id=<?php echo $row['id']; ?>&subcat=<?php echo $row['sub_category_name']; ?>&cat=<?php echo $_GET['id']; ?>"><?php echo $row['sub_category_name']; ?></a> /
+        <?php
+        }
+        ?>
+    </div>
 
     <div class="container">
         <?php
@@ -36,9 +46,9 @@ include("config/db_connect.php");
                 ?>
 
                 <div class="row">
-                    <a href="sub_cat_show.php?id=<?php echo $subcategory['id'] ?>&subcat=<?php echo $subcategory['sub_category_name'] ?>"
-                    <h3 id="catagory"
-                        style="font-family: 'Pacifico', cursive;"><?php echo $subcategory['sub_category_name'] ?></h3></a>
+                    <legend><h3 class="catagory"><?php echo $subcategory['sub_category_name'] ?></h3></legend>
+<!--                    <a href="sub_cat_show.php?id=--><?php //echo $subcategory['id'] ?><!--&subcat=--><?php //echo $subcategory['sub_category_name'] ?><!--"-->
+<!--                    <h3 class="catagory">--><?php //echo $subcategory['sub_category_name'] ?><!--</h3></a>-->
                     <div class="clearfix">
                         <div id="<?php echo $subcategory['sub_category_name'] ?>" class="carousel slide"
                              data-interval="false">

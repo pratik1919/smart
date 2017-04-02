@@ -18,25 +18,26 @@ include('config/db_connect.php');
 </head>
 
 <body>
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper">
 
     <?php require('header.php') ?>
 
-    <div style="height: 150px;"></div>
 
-  <div class="add" style="float:left; left: 1px;">
-
-    </div>
-
-    <div class="add" style="float:right; right: 1px;">
-
+    <div class="subCatMenu">
+        <?php
+        $s_cat = subcat($_GET['cat'], $connection);
+        while ($row = $s_cat->fetch_assoc()){
+            ?>
+            <a href="sub_cat_show.php?id=<?php echo $row['id']; ?>&subcat=<?php echo $row['sub_category_name']; ?>&cat=<?php echo $_GET['cat']; ?>"><?php echo $row['sub_category_name']; ?></a> /
+            <?php
+        }
+        ?>
     </div>
 
     <div class="container">
 
-
         <fieldset>
-            <legend><h3 class="catagory" style="font-family: 'Pacifico', cursive;"><?php echo $_GET['subcat']?></h3></legend>
+            <legend><h3 class="catagory"><?php echo $_GET['subcat']?></h3></legend>
         </fieldset>
         <?php
         $id = $_GET['id'];

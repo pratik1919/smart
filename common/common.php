@@ -97,7 +97,7 @@ function getCategoryName($connection,$cat_id){
 
 function getSubCategoryName($connection,$sub_cat_id){
 
-    $select_category = "SELECT *FROM subcategory WHERE id='$sub_cat_id'";
+    $select_category = "SELECT * FROM subcategory WHERE id='$sub_cat_id'";
 
     $result = mysqli_query($connection,$select_category);
 
@@ -249,7 +249,7 @@ function deleteCategory($connection,$id){
 
 
 function getSubCategory($connection){
-    $select_category = "SELECT *FROM subcategory";
+    $select_category = "SELECT * FROM subcategory";
 
     $result = mysqli_query($connection,$select_category);
 
@@ -310,6 +310,14 @@ function deleteSubCategory($connection,$id){
     }
 
     return $data;
+}
+
+function subcat($id, $connection){
+    $select_category = "SELECT * FROM subcategory where c_id = $id";
+
+    $result = mysqli_query($connection,$select_category);
+
+    return $result;
 }
 
 function random_password($connection) {

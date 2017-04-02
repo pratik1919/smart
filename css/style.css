@@ -68,7 +68,7 @@
 #main {
     transition: margin-left .5s;
     padding: 9px;
-    position: absolute;
+    position: fixed;
     z-index: 10;
 }
 
@@ -518,12 +518,10 @@ body {
 }
 
 
-#catagory{
+.catagory{
     text-decoration: none;
-    font-size: 30px;
+    font-size: 36px !important;
 }
-
-
 
 .add {
     height: 480px;
@@ -533,4 +531,19 @@ body {
 
 .dropdown-menu .sub-menu a{
     padding: 0px;
+}
+
+.subCatMenu{
+    padding: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.subCatMenu a{
+    text-decoration: none;
+    color: #aeaeae !important;
+}
+
+legend{
+    text-align: center;
 }

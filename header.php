@@ -3,7 +3,7 @@ include('config/db_connect.php');
 include('common/common.php');
 
 $link = $connection->query("select * from link");
-while($row=$link->fetch_assoc()){
+while ($row = $link->fetch_assoc()) {
     $facebook = $row['facebook'];
     $twitter = $row['twitter'];
     $youtube = $row['youtube'];
@@ -35,7 +35,7 @@ while($row=$link->fetch_assoc()){
 
 
     <style>
-        .navbar{
+        .navbar {
             color: black;
             background-color: #ffffff;
             border-bottom: 3px solid darkblue;
@@ -44,9 +44,9 @@ while($row=$link->fetch_assoc()){
             border-left: none;
         }
 
-        .highlight{
-            -webkit-box-shadow: 0px 6px 21px -6px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 6px 21px -6px rgba(0,0,0,0.75);
+        .highlight {
+            -webkit-box-shadow: 0px 6px 21px -6px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 6px 21px -6px rgba(0, 0, 0, 0.75);
             box-shadow: 0px 6px 21px -6px #64AEDC;
         }
     </style>
@@ -102,7 +102,7 @@ while($row=$link->fetch_assoc()){
 <div id="mySidenav" class="sidenav" style="z-index: 99">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <?php
-    if(isset($_SESSION['login'])){
+    if (isset($_SESSION['login'])) {
         ?>
         <a href="logout.php">Logout</a>
         <a href="password.php">Change Password</a>
@@ -115,10 +115,11 @@ while($row=$link->fetch_assoc()){
     $categoryList = getCategory($connection);
     $subCategoryList = getSubCategory($connection);
 
-    foreach($categoryList as $category)
-    {?>
+    foreach ($categoryList as $category) {
+        ?>
 
-        <a href="category_list.php?id=<?php echo $category['id'] ?>"<span class=""></span> <?php echo $category["category_name"]?>
+        <a href="category_list.php?id=<?php echo $category['id'] ?>"<span
+                class=""></span> <?php echo $category["category_name"] ?>
         </a>
 
         <ul class="dropdown-menu sub-menu" style="height: 400px;">
@@ -126,28 +127,33 @@ while($row=$link->fetch_assoc()){
 
             <?php
 
-            foreach($subCategoryList as $subCategory){
+            foreach ($subCategoryList as $subCategory) {
 
-                if($category["id"]==$subCategory["c_id"]) {?>
+                if ($category["id"] == $subCategory["c_id"]) { ?>
                     <div class="col-lg-3">
-                        <a href="sub_cat_show.php?id=<?php echo $subCategory['id']?>&subcat=<?php echo $subCategory['sub_category_name']?>" <li class="dropdown-header"><h5><?php echo $subCategory["sub_category_name"] ?></h5></li></a>
+                        <a href="sub_cat_show.php?id=<?php echo $subCategory['id'] ?>&subcat=<?php echo $subCategory['sub_category_name'] ?>"
+                        <li class="dropdown-header"><h5><?php echo $subCategory["sub_category_name"] ?></h5></li>
+                        </a>
 
                         <?php
-                        $itemList = getItemBySubCat($connection,$subCategory['id']);
+                        $itemList = getItemBySubCat($connection, $subCategory['id']);
 
                         $count = count($itemList);
 
-                        foreach($itemList as $item){
+                        foreach ($itemList as $item) {
                             ?>
-                            <li><a href="display_product.php?p_id=<?php echo $item['id']?>"><?php echo $item['item_name']?></a></li>
+                            <li>
+                                <a href="display_product.php?p_id=<?php echo $item['id'] ?>"><?php echo $item['item_name'] ?></a>
+                            </li>
 
                             <?php
 
                         }
 
-                        if($count >=5){
+                        if ($count >= 5) {
                             ?>
-                            <a href="sub_cat_show.php?id=<?php echo $subCategory['id']?>&subcat=<?php echo $subCategory['sub_category_name']?>">See more..</a>
+                            <a href="sub_cat_show.php?id=<?php echo $subCategory['id'] ?>&subcat=<?php echo $subCategory['sub_category_name'] ?>">See
+                                more..</a>
                             <?php
                         }
                         ?>
@@ -166,12 +172,11 @@ while($row=$link->fetch_assoc()){
 </div>
 <div id="main">
     <span style="font-size:30px;cursor:pointer; color: yellow;" onclick="openNav()">&#9776;</span>
-    <span><img src="img/logo.png" height="70px" alt=""></span>
+    <span><a href="index.php"><img src="img/logo.png" height="70px" alt=""></a></span>
 </div>
 
 <div class="top-info">
     <h6 style="padding: 9px; display: inline-block;"><i class="glyphicon glyphicon-phone"></i> Call : 985-1243865</h6>
-
 
 
     <ul class="nav navbar-nav noStyle">
@@ -180,7 +185,8 @@ while($row=$link->fetch_assoc()){
                 <div class="input-group" style="width: 600px;">
                     <input type="text" class="form-control" placeholder="Search" name="searchItem">
                     <div class="input-group-btn">
-                        <button style="height: 34px;" class="btn btn-default" type="submit" name="submit" value="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        <button style="height: 34px;" class="btn btn-default" type="submit" name="submit"
+                                value="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
                 </div>
             </form>
@@ -218,11 +224,13 @@ while($row=$link->fetch_assoc()){
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
+        document.getElementById("main").style.marginLeft = "0";
         document.body.style.backgroundColor = "white";
     }
 
-    $(document).ready(function(){$("#main").fixedScrollPosition("50px")})
+    $(document).ready(function () {
+        $("#main").fixedScrollPosition("50px")
+    })
 </script>
 
 </body>
