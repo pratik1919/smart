@@ -18,7 +18,7 @@ if(empty($_SESSION['username'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>Smart Gallery</title>
-    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
     <script type = "text/javascript">
 
         function deliveryStatus(order_id){
@@ -61,14 +61,14 @@ if(empty($_SESSION['username'])) {
 
 <body>
 
-<div class="wrapper" style="background-color: #E57373">
+<div class="wrapper">
 
     <?php require('a_menu.php') ?>
 
     <div class="container">
 
-        <label class="radio-inline"  style="color: white"><input type="radio" name="optradio" onclick="changeList(0)">Open</label>
-        <label class="radio-inline"  style="color: white"><input type="radio" name="optradio" onclick="changeList(1)">Complete</label>
+        <label class="radio-inline" ><input type="radio" name="optradio" onclick="changeList(0)">Open</label>
+        <label class="radio-inline" ><input type="radio" name="optradio" onclick="changeList(1)">Complete</label>
 
         <div  class="jumbotron" style="padding: 10px; margin-right: 10px;" id="open">
             <fieldset>
