@@ -18,8 +18,7 @@ if(empty($_SESSION['username'])) {
 <head lang="en">
     <meta charset="UTF-8">
     <title>Smart Gallery</title>
-    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16" >
-    <
+    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
     <script type = "text/javascript">
 
         function deliveryStatus(order_id){

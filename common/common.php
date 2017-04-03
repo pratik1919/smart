@@ -7,7 +7,7 @@
  * Date: 6/11/16
  * Time: 6:27 PM
  */
-session_start();
+//session_start();
 function checkLogin($connection,$username,$password){
 
     $password = md5($password);

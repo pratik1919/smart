@@ -9,65 +9,16 @@ include('config/db_connect.php');
     <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/component.css" type="text/css"/>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
-    <!-- Start WOWSlider.com HEAD section -->
-    <link rel="stylesheet" type="text/css" href="slider/engine1/style.css" />
-    <script type="text/javascript" src="slider/engine1/jquery.js"></script>
-    <!-- End WOWSlider.com HEAD section -->
+<!--    slider-->
+    <link rel="stylesheet" href="css/my-slider.css"/>
+    <script src="js/ism-2.2.min.js"></script>
 
 
 
-    <!--fonts-->
-    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
-    <!--fonts-->
-    <script src="http://maps.googleapis.com/maps/api/js"></script>
-    <style>
-        .navbar{
-            color: black;
-            background-color: #ffffff;
-            border-bottom: 3px solid darkblue;
-            border-top: none;
-            border-right: none;
-            border-left: none;
-        }
-    </style>
-
-    <script>
-
-        var myCenter=new google.maps.LatLng(27.719231, 85.350376);
-
-        function initialize()
-        {
-            var mapProp = {
-                center:myCenter,
-                zoom:10,
-                mapTypeId:google.maps.MapTypeId.ROADMAP
-            };
-
-            var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-            var marker=new google.maps.Marker({
-                position:myCenter
-            });
-
-            marker.setMap(map);
-
-            var infowindow = new google.maps.InfoWindow({
-                content:"CareShopNepal<br>Mobile Number 9849369369"
-            });
-
-            infowindow.open(map,marker);
-
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-    </script>
-    <script>(function(d, s, id) {
+    <script type="text/javascript">
+        (function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) return;
             js = d.createElement(s); js.id = id;
@@ -79,121 +30,34 @@ include('config/db_connect.php');
 </head>
 <body>
 
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper">
     <?php include('header.php') ?>
 
-    <div class="container" style="width: 1362px;">
-        <div class="row featured-product">
-            <div class="col-lg-2">
-                <!--                <ul class="nav nav-pills">-->
-                <!--                    <li class="">-->
-                <!--                        <ul class="dropdown-menu" style=" margin-top: -1px; border-radius: 0;">-->
-                <!--                            --><?php
-                //                            $categoryList = getCategory($connection);
-                //                            $subCategoryList = getSubCategory($connection);
-                //
-                //                            foreach($categoryList as $category)
-                //                            {?>
-                <!--                                <li>-->
-                <!--                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class=""></span> --><?php //echo $category["category_name"]?>
-                <!---->
-                <!--                                        <b class="caret"></b></a>-->
-                <!---->
-                <!--                                    <ul class="dropdown-menu sub-menu" style="height: 400px;">-->
-                <!---->
-                <!---->
-                <!--                                        --><?php
-                //
-                //                                        foreach($subCategoryList as $subCategory){
-                //
-                //                                            if($category["id"]==$subCategory["c_id"]) {?>
-                <!--                                                <div class="col-lg-3">-->
-                <!--                                                    <a href="subCategoryItemDisplay.php?id=--><?php //echo $subCategory['id']?><!--&subcat=--><?php //echo $subCategory['sub_category_name']?><!--" <li class="dropdown-header"><h5>--><?php //echo $subCategory["sub_category_name"] ?><!--</h5></li></a>-->
-                <!---->
-                <!--                                                    --><?php
-                //                                                    $itemList = getItemBySubCat($connection,$subCategory['id']);
-                //
-                //                                                    $count = count($itemList);
-                //
-                //                                                    foreach($itemList as $item){
-                //                                                        ?>
-                <!--                                                        <li><a href="displayProductView.php?p_id=--><?php //echo $item['id']?><!--">--><?php //echo $item['item_name']?><!--</a></li>-->
-                <!---->
-                <!--                                                    --><?php
-                //
-                //                                                    }
-                //
-                //                                                    if($count >=5){
-                //                                                        ?>
-                <!--                                                        <a href="subCategoryItemDisplay.php?id=--><?php //echo $subCategory['id']?><!--&subcat=--><?php //echo $subCategory['sub_category_name']?><!--">See more..</a>-->
-                <!--                                                        --><?php
-                //                                                    }
-                //                                                    ?>
-                <!---->
-                <!--                                                </div>-->
-                <!---->
-                <!--                                            --><?php
-                //                                            }
-                //
-                //                                        }?>
-                <!---->
-                <!---->
-                <!--                                    </ul></li>-->
-                <!--                            --><?php
-                //                            }
-                //                            ?>
-                <!--                        </ul>-->
-                <!---->
-                <!--                    </li>-->
-                <!--                </ul>-->
-            </div>
-            <div class="row nopadding">
-                <!--            <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
-                <div id="wowslider-container1" style="height: 400px;">
-                    <div class="ws_images">
-                        <ul>
-                            <?php
-                            $imageList = getImage($connection);
-
-                            foreach($imageList as $image){
-                                ?>
-
-                                <li><img height="400px" width="100%" src="itemImages/<?php echo $image['image']?>" alt="1" title="<?php echo $image['item_name']?>" id="wows1_0"/></li>
-
-                                <?php
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                    <div class="ws_bullets">
-                        <div>
-                            <?php
-                            $imageList = getImage($connection);
-
-                            foreach($imageList as $image){?>
-
-                                <a href="#" title="<?php echo $image['item_name']?>"></a>
-
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </div>
-                <script type="text/javascript" src="slider/engine1/wowslider.js"></script>
-                <script type="text/javascript" src="slider/engine1/script.js"></script>
-                <!-- End WOWSlider.com BODY section -->
-            </div>
-            <!--            <div class="col-lg-3 nopadding" style="height: 400px;">-->
-            <!--                <div class="fb-page" data-href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/">Care Shop Nepal</a></blockquote></div>-->
-            <!--            </div>-->
-        </div>
-
+    <div class="ism-slider" data-transition_type="zoom" data-play_type="loop" data-radios="false" id="my-slider">
+        <ol>
+            <li>
+                <img src="img/flower-729514_1280.jpg">
+                <div class="ism-caption ism-caption-0">My slide caption text</div>
+            </li>
+            <li>
+                <img src="img/beautiful-701678_1280.jpg">
+                <div class="ism-caption ism-caption-0">My slide caption text</div>
+            </li>
+            <li>
+                <img src="img/summer-192179_1280.jpg">
+                <div class="ism-caption ism-caption-0">My slide caption text</div>
+            </li>
+            <li>
+                <img src="img/city-690332_1280.jpg">
+                <div class="ism-caption ism-caption-0">My slide caption text</div>
+            </li>
+            <li>
+                <img src="img/bora-bora-685303_1280.jpg">
+                <div class="ism-caption ism-caption-0">My slide caption text</div>
+            </li>
+        </ol>
     </div>
 
-    <hr/>
-
-    <div class="row" style="height: 30px;"></div>
 
 
     <div class="container" style="width: 1287px;">
@@ -363,6 +227,8 @@ include('config/db_connect.php');
 
         </div>
     </div>
+
+
 
     <div style="height: 650px;"></div>
 

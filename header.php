@@ -20,18 +20,20 @@ while ($row = $link->fetch_assoc()) {
     <title>Smart Gallery</title>
     <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/bootstrap-social.css" rel="stylesheet" type="text/css">
+    <link href="bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css">
     <!--<link rel="stylesheet" href="../css/imageHoverStylesheet.css" type="text/css">-->
     <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
     <script src="js/subcategory.js" type="text/javascript"></script>
     <script src="js/category.js" type="text/javascript"></script>
     <script src="js/custom.js" type="text/javascript"></script>
     <script src="js/item.js" type="text/javascript"></script>
     <script src="js/jquery.noty.packaged.min.js"></script>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="bootstrap/css/bootstrap-social.css" rel="stylesheet" type="text/css">
-    <link href="bootstrap/css/font-awesome.css" rel="stylesheet" type="text/css">
+
     <!--    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>-->
-    <script src="bootstrap/js/bootstrap.js"></script>
+
 
 
     <style>
@@ -175,6 +177,23 @@ while ($row = $link->fetch_assoc()) {
     <span><a href="index.php"><img src="img/logo.png" height="70px" alt=""></a></span>
 </div>
 
+
+<!---->
+<!--<button class="btn btn-facebook socialClass">-->
+<!--    <a style="color: black" data-toggle="popover" data-placement="left" data-content="Content"><span class="fa fa-flash"></span></a>-->
+<!--</button>-->
+
+
+<button class="btn btn-facebook socialClass">
+    <a href="#" class="details-box btn" rel="popover"
+       data-content="sf"
+       data-placement="left"
+       data-original-title="Title">
+        d
+    </a>
+</button>
+
+
 <div class="top-info">
     <h6 style="padding: 9px; display: inline-block;"><i class="glyphicon glyphicon-phone"></i> Call : 985-1243865</h6>
 
@@ -228,9 +247,18 @@ while ($row = $link->fetch_assoc()) {
         document.body.style.backgroundColor = "white";
     }
 
-    $(document).ready(function () {
-        $("#main").fixedScrollPosition("50px")
-    })
+//    $(document).ready(function () {
+//        $('[data-toggle="popover"]').popover();
+//    });
+
+    var box = $('.details-box');
+    box.each(function() {
+        var that = $(this);
+        var text = that.text();
+        that.attr('data-content', text);
+        that.popover();
+    });
+
 </script>
 
 </body>

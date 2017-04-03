@@ -30,7 +30,7 @@ if(!empty($_SESSION['username'])){
 
     <form class="form-signin loginForm" id="login-form">
         <input type="hidden" name="login" value="login">
-        <h2 style=" text-align: center; font-family: 'Pacifico', cursive;">Smart Gallery</h2>
+        <h2>Smart Gallery</h2>
         <!--        <label for="username" class="sr-only">Username</label>-->
         <input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
         <!--        <label for="inputPassword" class="sr-only">Password</label>-->
