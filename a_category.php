@@ -38,7 +38,7 @@ if(empty($_SESSION['username'])){
 
 <body>
 
-<div class="wrapper" style="background:#E57373;">
+<div class="wrapper">
     <!-- Add Category Modal -->
     <div id="addCategory" class="modal fade" role="dialog">
         <div class="modal-dialog">

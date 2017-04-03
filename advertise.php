@@ -23,7 +23,7 @@ if (empty($_SESSION['username'])) {
 
 <body>
 
-<div class="wrapper" style="background: #E57373; color: #630b0b; display: flex; align-items: center; justify-content: center;">
+<div class="wrapper" style=" color: #630b0b; display: flex; align-items: center; justify-content: center;">
     <?php require('a_menu.php') ?>
 
     <div class="container">

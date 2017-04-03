@@ -22,7 +22,7 @@ if(empty($_SESSION['username'])) {
 
 <body>
 
-<div class="wrapper" style="background:#E57373;">
+<div class="wrapper">
 
     <?php require('a_menu.php') ?>
 
