@@ -194,7 +194,7 @@ while ($row = $link->fetch_assoc()) {
 </button>
 
 
-<div class="top-info">
+<div class="top-info" style="background-color: #f39c12">
     <h6 style="padding: 9px; display: inline-block;"><i class="glyphicon glyphicon-phone"></i> Call : 985-1243865</h6>
 
 
