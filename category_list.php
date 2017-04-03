@@ -85,6 +85,7 @@ include("config/db_connect.php");
                                                     <?php
                                                 }else {
                                                     ?>
+                                                    <h3><?php echo $item['item_name'] ?></h3>
                                                     <h5>Rs <?php echo $item['discounted_price'] ?></h5>
 
                                                     <?php
@@ -110,7 +111,7 @@ include("config/db_connect.php");
 
                                         <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
                                             <div id="box"
-                                                 style="background-image: url('../../itemImages/<?php echo $item['image'] ?>')">
+                                                 style="background-image: url('/itemImages/<?php echo $item['image'] ?>')">
                                                 <div id="overlay">
                                                     <a href="#">
                                                         <button class="btn btn-success"><span
