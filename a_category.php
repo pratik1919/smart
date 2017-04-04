@@ -25,9 +25,9 @@ if(empty($_SESSION['username'])){
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
+    <title>Smart Gallery</title>
 
-    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
 
     <script>
         function showMes(){
@@ -38,7 +38,7 @@ if(empty($_SESSION['username'])){
 
 <body>
 
-<div class="wrapper" style="background:#E57373;">
+<div class="wrapper">
     <!-- Add Category Modal -->
     <div id="addCategory" class="modal fade" role="dialog">
         <div class="modal-dialog">

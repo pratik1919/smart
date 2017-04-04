@@ -549,12 +549,3 @@ legend{
     text-align: center;
 }
 
-.socialClass{
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    border-radius: 100% !important;
-    height: 40px;
-    width: 40px;
-    z-index: 1000000000;
-}

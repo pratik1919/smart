@@ -17,13 +17,13 @@ if (empty($_SESSION['username'])) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
+    <title>Smart Gallery</title>
     <script src="js/advertisement.js" type="text/javascript"></script>
 </head>
 
 <body>
 
-<div class="wrapper" style="background: #E57373; color: #630b0b; display: flex; align-items: center; justify-content: center;">
+<div class="wrapper">
     <?php require('a_menu.php') ?>
 
     <div class="container">

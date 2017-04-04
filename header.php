@@ -52,6 +52,16 @@ while ($row = $link->fetch_assoc()) {
             box-shadow: 0px 6px 21px -6px #64AEDC;
         }
     </style>
+    <script type="text/javascript">
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
 </head>
 <body>
 
@@ -176,22 +186,14 @@ while ($row = $link->fetch_assoc()) {
     <span style="font-size:30px;cursor:pointer; color: yellow;" onclick="openNav()">&#9776;</span>
     <span><a href="index.php"><img src="img/logo.png" height="70px" alt=""></a></span>
 </div>
+<div class="dropup" style="position: fixed; bottom: 10px; right: 10px; z-index: 10000000">
+    <button class="btn btn-facebook dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="fa fa-flash"></span></button>
+    <div class="dropdown-menu" style="margin-left: -176px;">
+        <div class="fb-page" data-href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/"></a></blockquote></div>
+    </div>
+</div>
 
-
-<!---->
-<!--<button class="btn btn-facebook socialClass">-->
-<!--    <a style="color: black" data-toggle="popover" data-placement="left" data-content="Content"><span class="fa fa-flash"></span></a>-->
-<!--</button>-->
-
-
-<button class="btn btn-facebook socialClass">
-    <a href="#" class="details-box btn" rel="popover"
-       data-content="sf"
-       data-placement="left"
-       data-original-title="Title">
-        d
-    </a>
-</button>
 
 
 <div class="top-info">
@@ -247,17 +249,21 @@ while ($row = $link->fetch_assoc()) {
         document.body.style.backgroundColor = "white";
     }
 
-//    $(document).ready(function () {
-//        $('[data-toggle="popover"]').popover();
-//    });
-
-    var box = $('.details-box');
-    box.each(function() {
-        var that = $(this);
-        var text = that.text();
-        that.attr('data-content', text);
-        that.popover();
+    $("[data-toggle=popover]").popover({
+        html: true,
+        content: function() {
+            return $('#popover-content').html();
+        }
     });
+
+
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
 
 </script>
 

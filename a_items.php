@@ -14,15 +14,15 @@ if(empty($_SESSION['username'])) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
-    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <title>Smart Gallery</title>
+    <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
     <link href="css/jquery.dataTables.min.css" type="text/css" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="wrapper" style="background:#E57373;">
+<div class="wrapper">
 
     <?php require('a_menu.php') ?>
 

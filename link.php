@@ -35,8 +35,8 @@ if (isset($_POST['submit'])) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
-<link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <title>Smart Gallery</title>
+<link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
     <link href="css/jquery.dataTables.min.css" type="text/css">
 </head>
 
@@ -53,8 +53,13 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-<div class="wrapper" style="background: #E57373; color: #630b0b;">
+<div class="wrapper">
 <?php require('a_menu.php') ?>
+
+
+<div class="container">
+
+    <div style="height: 100px;"></div>
 
     <fieldset>
         <legend style="text-align: center;">Set Links</legend>
@@ -64,7 +69,7 @@ if (isset($_POST['submit'])) {
         <form method="post" action="#" >
             <tr>
                 <td>
-                    <img src="img/mail.png" alt=""/>
+                    <button class="btn btn-mail"><span class="fa fa-gmail"></span></button>
                 </td>
                 <td>
                     <input type="email" class="form-control" name="mail" id="" value="<?php echo empty($email)?'NULL':$email; ?>"/>
@@ -72,8 +77,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <img src="img/facebooklogo.png" alt=""/>
-                </td>
+                    <button class="btn btn-facebook"><span class="fa fa-facebook"></span></button>                </td>
                 <td>
                     <input type="text" class="form-control" name="facebook" id=""
                            value="<?php echo empty($facebook)?'NULL':$facebook ?>"/>
@@ -81,7 +85,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <img src="img/twitter.png" alt=""/>
+                    <button class="btn btn-twitter"><span class="fa fa-twitter"></span></button>
                 </td>
                 <td>
                     <input type="text" class="form-control" name="twitter" id="" value="<?php echo empty($twitter)?'NULL':$twitter ?>"/>
@@ -89,8 +93,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <img src="img/instagramlogo.png" alt=""/>
-                </td>
+                    <button class="btn btn-instagram"><span class="fa fa-instagram"></span></button>                </td>
                 <td>
                     <input type="text" class="form-control" name="instagram" id=""
                            value="<?php echo empty($instagram)?'NULL':$instagram ?>"/>
@@ -98,8 +101,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <img src="img/youtube.png" alt=""/>
-                </td>
+                    <button class="btn btn-google"><span class="fa fa-youtube"></span></button>                </td>
                 <td>
                     <input type="text" class="form-control" name="youtube" id="" value="<?php echo empty($youtube)?'NULL':$youtube ?>"/>
                 </td>
@@ -113,6 +115,7 @@ if (isset($_POST['submit'])) {
 
         </form>
     </table>
+</div>
 
     <?php require('a_footer.php') ?>
 </div>
