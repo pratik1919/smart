@@ -15,9 +15,9 @@
 </head>
 
 <body>
-<div class="wrapper" style="background: rgba(202, 83, 63, 0.27); color: #630b0b;">
+<div class="wrapper">
 
-    <?php require('../layout/header.php') ?>
+    <?php require('header.php') ?>
 
     <div style="height: 150px;"></div>
 
@@ -39,7 +39,7 @@
                 ?>
 
                 <div class="col-lg-3" data-target="#carousel" data-slide-to="0">
-                    <div id="box" style="background-image: url('../../itemImages/<?php echo $item['image']?>')">
+                    <div id="box" style="background-image: url('itemImages/<?php echo $item['image']?>')">
                         <div id="overlay">
                             <a href="display_product.php?p_id=<?php echo $item['id']?>">
                                 <button class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span> View
@@ -48,9 +48,23 @@
                         </div>
                     </div>
                     <div style="text-align: center;">
-                        <h3><?php echo $item['item_name'] ?></h3>
-                        <h4><strike>Rs. <?php echo $item['price'] ?>/-</strike></h4>
-                        <h5>Rs.<?php echo $item['discounted_price']?> /-</h5>
+                        <?php
+                        if ($item['discounted_price'] < $item['price']){
+                            ?>
+                            <h3><?php echo $item['item_name'] ?></h3>
+                            <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike>
+                            </h5>
+
+                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
+                            <?php
+                        }else {
+                            ?>
+                            <h3><?php echo $item['item_name'] ?></h3>
+                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
+
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
 
@@ -61,7 +75,7 @@
 
     </div>
     <div style="height: 300px;"></div>
-    <?php require('../layout/footer.php') ?>
+    <?php require('footer.php') ?>
 </div>
 
 </body>

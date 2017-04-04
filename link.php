@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
 
 <body>
 
-<div class="wrapper">
+<div class="wrapper" >
 <?php require('a_menu.php') ?>
 
 

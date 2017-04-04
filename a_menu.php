@@ -41,7 +41,7 @@
 <!--<body background="img/PolygonalBackground.jpg" style="background-size: cover; background-position: center; background-attachment: fixed;">-->
 
 
-<nav class = "navbar navbar-default menu navbar-fixed-top" role = "navigation" style=" padding-right: 25px;">
+<nav class = "navbar navbar-default menu navbar-fixed-top" role = "navigation" >
     <div class = "navbar-header">
         <button type = "button" class = "navbar-toggle"
                 data-toggle = "collapse" data-target = "#navbar-collapse">
@@ -50,31 +50,31 @@
             <span class = "icon-bar"></span>
             <span class = "icon-bar"></span>
         </button>
-        <a class = "navbar-brand" href = "home.php"><img style="margin-top: -21px;" height="62px" width="133px" src="img/logo.png" alt="test"></a>
+        <a class = "navbar-brand" href = "index.php"><img style="margin-top: -21px;" height="62px" width="133px" src="img/logo.png" alt="test"></a>
 
     </div>
 
-    <div class = "collapse navbar-collapse js-navbar-collapse" id = "navbar-collapse">
+    <div class = "collapse navbar-collapse js-navbar-collapse" id = "navbar-collapse"  style="background-color: #f39c12;width: 100%">
         <ul class="nav navbar-nav">
             <li>
-                <a href="delivery_status.php"><span class="glyphicon glyphicon-plane"> </span> Delivery</a>
+                <a href="delivery_status.php" style="color: #ecf0f1"><span class="glyphicon glyphicon-plane"> </span> Delivery</a>
             </li>
             <li>
-                <a href="a_items.php"><span class="glyphicon glyphicon-bishop"> </span> Product</a>
+                <a href="a_items.php"  style="color: #ecf0f1"><span class="glyphicon glyphicon-bishop"> </span> Product</a>
             </li>
             <li>
-                <a href="a_category.php"><span class="glyphicon glyphicon-list-alt"> </span> Category</a>
+                <a href="a_category.php"  style="color: #ecf0f1"><span class="glyphicon glyphicon-list-alt"> </span> Category</a>
             </li>
             <li>
-                <a href="advertise.php"><span class="glyphicon glyphicon-list-alt"> </span> Advertise</a>
+                <a href="advertise.php"  style="color: #ecf0f1"><span class="glyphicon glyphicon-list-alt"> </span> Advertise</a>
             </li>
             <li>
-                <a href="link.php"><span class="glyphicon glyphicon-link"> </span> Links</a>
+                <a href="link.php"  style="color: #ecf0f1"><span class="glyphicon glyphicon-link"> </span> Links</a>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="password.php">Change Password</a></li>
-            <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+            <li><a href="password.php"  style="color: #ecf0f1;">Change Password</a></li>
+            <li><a href="logout.php"  style="color: #ecf0f1; "><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         </ul>
     </div><!-- /.close of nav-collapse -->
 </nav>
