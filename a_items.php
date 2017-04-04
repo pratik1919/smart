@@ -222,7 +222,7 @@ if(empty($_SESSION['username'])) {
 
             $.ajax({
                 type:"POST",
-                url:'../../controller/subcategory.php',
+                url:'controller/subcategory.php',
                 data:"formType="+mode+"&id="+cat,
                 success:function(data){
                     var data = JSON.parse(data);

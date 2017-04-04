@@ -35,13 +35,16 @@ function checkItemName(){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/item.php',
+        url:'controller/item.php',
         data:"formType="+mode+"&itemName="+itemName,
         success:function(data){
             var data = JSON.parse(data);
 
             if(data.message=='duplicate'){
                 displayMessage("Duplicate Item Name","error")
+                $('#save').attr('disabled',true);
+            }else{
+                $('#save').attr('disabled',false);
             }
         },error: function (er) {
             alert("Error while Creating" +er);
@@ -64,7 +67,7 @@ function deleteItem(id){
                 n.close();
                 $.ajax({
                     type:"POST",
-                    url:'../../controller/item.php',
+                    url:'controller/item.php',
                     data:"formType="+mode+"&id="+id,
                     success:function(data){
                         var data = JSON.parse(data);
@@ -97,7 +100,7 @@ function editItem(id){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/item.php',
+        url:'controller/item.php',
         data:"formType="+mode+"&id="+id,
         success:function(data){
             var data = JSON.parse(data);
