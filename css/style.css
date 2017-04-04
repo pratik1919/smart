@@ -535,9 +535,14 @@ body {
 }
 
 .subCatMenu{
-    padding: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 20px;
     text-align: center;
+    background-color: rgba(243, 156, 18, 0.22);
+    margin-bottom: 10px;
 }
 
 .subCatMenu a{
@@ -549,3 +554,127 @@ legend{
     text-align: center;
 }
 
+.featured{
+    padding: 0px !important;
+}
+
+.featured img{
+    height: 400px;
+    width: 100%;
+}
+
+.featured:hover{
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.product{
+    height: 300px;
+    width: 100%;
+    background-size: cover;
+}
+
+
+.title{
+    padding: 30px;
+    text-align: center;
+    font-family: "Adobe Arabic";
+    font-size: 5em;
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background-color: orangered;
+    overflow: hidden;
+    height:0;
+    transition: .6s ease;
+    opacity: 0.95;
+
+}
+
+.overlay h5{
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 40px;
+}
+
+.overlay h5 span{
+    font-size: 25px;
+}
+
+.product:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.product-section{
+    width: 100%;
+    padding: 15px;
+    display: block;
+}
+
+
+.modal-header, .modal-footer{
+    background-color: orangered;
+    color: white;
+}
+
+.best-seller div{
+    display: table;
+    height: 400px;
+    padding: 15px;
+}
+
+.best-seller{
+    /*background-color: snow;*/
+    margin-top: 15px;
+}
+
+.best-seller div .title{
+    font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    font-style: normal;
+    color: #404752;
+    font-weight: 700;
+    text-transform: none;
+    font-size: 45px;
+    line-height: 66px;
+    display: table-cell;
+    vertical-align: middle;;
+}
+
+.best-seller img{
+    height: 100%;
+    position: relative;
+}
+
+
+
+.footerDiv .btn{
+    height: 100px;
+    display: table;
+}
+
+.footerDiv .btn .fa{
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 50px;
+}
+
+.footerDiv{
+    text-align: center;
+}
+
+.changeBtnDiv{
+    right: 0px;
+    position: absolute;
+    margin-top: 15px;
+    margin-right: 15px;
+    z-index: 10;
+}

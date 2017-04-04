@@ -417,6 +417,65 @@ function getItemBySubCat($connection,$id){
 
 }
 
+function getProduct($position, $connection)
+{
+
+    $select = $connection->prepare("SELECT * FROM `product` WHERE `position_id` = ?");
+    $select->bind_param("s", $position);
+    $select->execute();
+    $r = $select->get_result();
+    return $r;
+}
+
+function addProd($name, $price, $desc, $photo, $pos, $conn){
+
+    $stmt = $conn->prepare("SELECT * FROM `product` WHERE `position_id` = ?");
+    $stmt->bind_param("s", $pos);
+    $stmt->execute();
+    while ($stmt->fetch()) {
+    }
+
+    if ($stmt->num_rows > 0) {
+        $stmt2 = $conn->prepare("DELETE FROM `product` WHERE `position_id` = ?");
+        $stmt2->bind_param("s", $pos);
+        $stmt2->execute();
+    }
+
+    $stmt4 = $conn->prepare("INSERT INTO `product`(`name`, `price`, `description`, `position_id`, `photo`) VALUES (?,?,?,?,?)");
+    $stmt4->bind_param("sssss", $name, $price, $desc, $pos, $photo);
+    $stmt4->execute();
+}
+
+
+
+function getItemByCat($connection,$id){
+
+    $select_item = "select *from item where c_id ='$id'";
+
+    $result = mysqli_query($connection,$select_item);
+
+    $data = array();
+    $i = 0;
+
+    while ($row = mysqli_fetch_assoc($result)) {
+        $data[$i]['id'] = $row["id"];
+        $data[$i]['item_name'] = $row["item_name"];
+        $data[$i]['image'] = $row["image"];
+        $data[$i]['size'] = $row["size"];
+        $data[$i]['description'] = $row["description"];
+        $data[$i]['color'] = $row["color"];
+        $data[$i]['price'] = $row["price"];
+        $data[$i]['discount'] = $row["discount"];
+        $data[$i]['discounted_price'] = $row["discounted_price"];
+        $data[$i]['category_name'] = getCategoryName($connection,$row["c_id"]);
+        $data[$i]['sub_category_name'] = getSubCategoryName($connection,$row["s_id"]);
+        $i++;
+    }
+
+    return $data;
+
+}
+
 function getImage($connection){
 
     $select_image = "select *from item order by id desc limit 5";

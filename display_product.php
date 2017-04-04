@@ -24,8 +24,8 @@ if (mysqli_num_rows($result) > 0) {
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
-    <link rel="icon" href="img/csnLogo.png" type="image/png" sizes="16x16">
+    <title>Smart Gallery</title>
+    <link rel="icon" href="img/logo.png" type="image/png" sizes="16x16">
     <script type="text/javascript">
 
         function validate(){
