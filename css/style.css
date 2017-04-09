@@ -12,7 +12,7 @@
 }
 
 .top-info{
-    background-color: black;
+    background-color: #f39c12;
     color: white;
     text-align: start;
     padding-left: 180px;
@@ -38,7 +38,7 @@
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: rgb(247, 180, 73);;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -48,7 +48,7 @@
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: #ffffff;
     display: block;
     transition: 0.3s
 }
@@ -72,12 +72,23 @@
     z-index: 100000;
 }
 
-@media screen and (max-height: 450px) {
+@media only screen and (max-width: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
 
 /*menu end*/
+
+
+@media only screen and (max-width: 700px) {
+    .search {
+        width: 100%;
+    }
+}
+
+.search{
+    width: 600px;
+}
 
 /*start of thumbnail slider*/
 
@@ -123,6 +134,7 @@ body {
     padding: 0px;
     overflow-x: hidden;
     height: 100%;
+    background-color: whitesmoke !important;
 }
 
 .social-media{
@@ -286,10 +298,7 @@ body div {
     background-color: rgba(8, 8, 8, 0.5);
 }
 
-.product {
-    padding: 5px;
-    border-right: 1px solid cyan;
-}
+
 
 .glass {
     width: 50%;
@@ -555,21 +564,27 @@ legend{
 }
 
 .featured{
+    padding: 5px;
+    margin-top: 20px;
     padding: 0px !important;
 }
 
+.featured div{
+    padding: 5px;
+    background-color: white;
+}
+
 .featured img{
-    height: 400px;
+    height: 200px;
     width: 100%;
 }
 
 .featured:hover{
-    border: 1px solid black;
     cursor: pointer;
 }
 
 .product{
-    height: 300px;
+    height: 200px;
     width: 100%;
     background-size: cover;
 }
@@ -679,15 +694,17 @@ legend{
     z-index: 10;
 }
 
-.container{
-    width: 1130px !important;
-}
 
-.productBox:hover + .disc{
+.productBox:hover .disc{
     background-color: rgba(255, 69, 0, 0.58);
     color: white;
 }
 
 .disc{
     padding-top: 5px;
+}
+
+.white{
+    background-color: white;
+    padding: 5px;
 }

@@ -190,20 +190,20 @@ while ($row = $link->fetch_assoc()) {
     <button class="btn btn-facebook dropdown-toggle" type="button" data-toggle="dropdown">
         <span class="fa fa-flash"></span></button>
     <div class="dropdown-menu" style="margin-left: -343px; width: 342px;">
-        <div class="fb-page" data-href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/"></a></blockquote></div>
+        <div class="fb-page" data-href="https://www.facebook.com/smartgallery.com.np/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/"></a></blockquote></div>
     </div>
 </div>
 
 
 
-<div class="top-info" style="background-color: #f39c12">
+<div class="top-info">
     <h6 style="padding: 9px; display: inline-block;"><i class="glyphicon glyphicon-phone"></i> Call : 985-1243865</h6>
 
 
     <ul class="nav navbar-nav noStyle">
         <li>
             <form class="navbar-form" role="search" action="search.php" method="post">
-                <div class="input-group" style="width: 600px;">
+                <div class="input-group search">
                     <input type="text" class="form-control" placeholder="Search" name="searchItem">
                     <div class="input-group-btn">
                         <button style="height: 34px;" class="btn btn-default" type="submit" name="submit"
