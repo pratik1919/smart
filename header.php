@@ -114,7 +114,7 @@ while ($row = $link->fetch_assoc()) {
 <div id="mySidenav" class="sidenav" style="z-index: 99">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <?php
-    if (isset($_SESSION['login'])) {
+    if (isset($_SESSION['username'])) {
         ?>
         <a href="logout.php">Logout</a>
         <a href="password.php">Change Password</a>
