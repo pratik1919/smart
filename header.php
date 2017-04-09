@@ -82,7 +82,7 @@ while ($row = $link->fetch_assoc()) {
 
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input class="form-control" type="text" name="name" required=""/>
+                        <input class="form-control" type="text" name="p_name" required="" id="p_name" onchange="return checkProductName();" />
                     </div>
 
                     <div class="form-group">
@@ -101,7 +101,7 @@ while ($row = $link->fetch_assoc()) {
                         <input type="file" name="photo" required/>
                     </div>
 
-                    <input type="submit" value="Add" class="btn btn-success btn-block"/>
+                    <input type="submit" value="Add" id="submit_btn" class="btn btn-success btn-block"/>
                 </form>
             </div>
             <div class="modal-footer">
@@ -265,6 +265,31 @@ while ($row = $link->fetch_assoc()) {
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+
+    function checkProductName() {
+        var productName = $('#p_name').val();
+
+        var mode ='checkProductName';
+
+        $.ajax({
+            type:"POST",
+            url:'controller/checkDuplicate.php',
+            data:"formType="+mode+"&productName="+productName,
+            success:function(data){
+                var data = JSON.parse(data);
+
+                if(data){
+                    document.getElementById('submit_btn').disabled = true;
+                }else{
+                    document.getElementById('submit_btn').disabled = false;
+                }
+
+            },error: function (er) {
+                alert("Error while Creating" +er);
+            }
+        });
+        return false;
+    }
 </script>
 
 </body>

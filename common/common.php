@@ -389,6 +389,19 @@ function checkDuplicateItem($connection,$itemName){
     return $message;
 }
 
+function checkDuplicateProduct($connection,$productName){
+
+    $select_productNameList = "select *from product WHERE name = '$productName'";
+
+    $result = mysqli_query($connection,$select_productNameList);
+
+    if(mysqli_num_rows($result) > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function getItemBySubCat($connection,$id){
 
     $select_item = "select *from item where s_id ='$id' limit 4";
