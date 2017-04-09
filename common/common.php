@@ -430,6 +430,12 @@ function getItemBySubCat($connection,$id){
 
 }
 
+function getSlider($connection){
+    $select = "SELECT * FROM `slider`";
+    $result = $connection->query($select);
+    return $result;
+}
+
 function getProduct($position, $connection)
 {
 

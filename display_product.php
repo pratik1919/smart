@@ -99,7 +99,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
     <?php require('header.php') ?>
-    <div class="row" style="height: 100px"></div>
+    <div class="row" style="height: 50px"></div>
 
     <div class="add" style="float:left; left: 1px;">
         <?php $advertisement = getAdvertisement($connection,0);
@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
         <?php if($advertisement!=null){ ?>
 
-            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
+            <img style="width: 115px; height: 100%;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
 
         <?php } ?>
     </div>
@@ -119,7 +119,7 @@ if (mysqli_num_rows($result) > 0) {
         ?>
         <?php if($advertisement){ ?>
 
-            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
+            <img style="width: 115px; height: 100%;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
 
         <?php } ?>
     </div>
@@ -127,18 +127,17 @@ if (mysqli_num_rows($result) > 0) {
 
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-6">
                 <div class="product">
-                    <img class="magniflier" src="itemImages/<?php echo $item_image?>" height="450px" width="100%"/>
+                    <img class="magniflier" style="border-radius:0px;" src="itemImages/<?php echo $item_image?>" height="550px" width="100%"/>
                 </div>
             </div>
-            <div class="col-lg-4"
-                 style="font-family: 'Comfortaa', cursive; color: white; background-color: rgba(49, 63, 59, 0.58);">
+            <div class="col-lg-6">
                 <h1><?php echo $item_name?></h1>
                 <div class="row">
                     <div class="col-md-6">
                         <h5 style="color: red;"><strong>Rs <strike><?php echo $item_price?>/-</strike></strong></h5>
-                        <h4><?php echo $item_discounted_price?>/-</h4>
+                        <h3>Rs <?php echo $item_discounted_price?>/-</h3>
                     </div>
                     <div class="col-lg-6" style="text-align: right;">
                         <!-- Your share button code -->
@@ -146,12 +145,8 @@ if (mysqli_num_rows($result) > 0) {
                              data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
                              data-layout="button_count">
                         </div>
-
                     </div>
-                </div>                <h2>Description</h2>
-                <p style="font-family: 'Comfortaa', cursive;"><?php echo $item_description?> </p>
-            </div>
-            <div class="col-lg-4">
+                </div>
                 <fieldset>
                     <legend>Order Now</legend>
 
@@ -210,110 +205,20 @@ if (mysqli_num_rows($result) > 0) {
                             <label class="control-label"></label>
                         </div>
                         <div>
-                            <input style="float: right;" type="submit" class="btn btn-primary" id="save" name="order"/>
+                            <input style="float: right;" type="submit" value="Order" class="btn btn-primary" id="save" name="order"/>
                         </div>
                     </form>
                 </fieldset>
             </div>
         </div>
+
+
+        <div style="padding: 10px; background-color: whitesmoke; margin-top: 20px;">
+            <h2>Description</h2>
+            <p style="font-family: 'Comfortaa', cursive;"><?php echo $item_description?> </p>
+        </div>
         <hr/>
 
-
-        <h3 id="catagory" style="font-family: 'Pacifico', cursive;">You May also like</h3>
-
-
-        <div class="row">
-
-            <div class="clearfix">
-                <div id="<?php echo $pro_category_name ?>" class="carousel slide" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <?php
-
-                            $category = getCategoryByItem($connection,$_GET['p_id']);
-
-                            $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
-
-                            $counter = 0;
-                            foreach($likeList as $item){
-                                ?>
-
-                                <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
-                                    <div id="box"
-                                         style="background-image: url('itemImages/<?php echo $item['image'] ?>')">
-                                        <div id="overlay">
-                                            <a href="display_product.php?p_id=<?php echo $item['id'] ?>">
-                                                <button class="btn btn-success"><span
-                                                            class="glyphicon glyphicon-eye-open"></span> View
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <h3><?php echo $item['item_name'] ?></h3>
-                                        <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
-                                        <h5>Rs <?php echo $item['discounted_price'] ?></h5>
-                                    </div>
-                                </div>
-
-                                <?php
-                                $counter++;
-                            }
-                            ?>
-                        </div>
-                        <!-- /item -->
-
-                        <div class="item">
-                            <?php
-
-                            $category = getCategoryByItem($connection,$_GET['p_id']);
-
-                            $likeList = getLikeItem($connection,$category['c_id'],$_GET['p_id']);
-
-                            $counter = 0;
-                            foreach($likeList as $item){
-                                ?>
-
-                                <div class="col-lg-3" data-target="#carousel" data-slide-to="<?php $counter ?>">
-                                    <div id="box"
-                                         style="background-image: url('../../itemImages/<?php echo $item['image'] ?>')">
-                                        <div id="overlay">
-                                            <a href="display_product.php?p_id=<?php echo $item['item_name'] ?>">
-                                                <button class="btn btn-success"><span
-                                                            class="glyphicon glyphicon-eye-open"></span> View
-                                                </button>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div style="text-align: center;">
-                                        <h3><?php echo $item['item_name'] ?></h3>
-                                        <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike></h5>
-                                        <h5>Rs <?php echo $item['discounted_price'] ?></h5>
-                                    </div>
-                                </div>
-
-                                <?php
-                                $counter++;
-                            }
-                            ?>
-                        </div>
-                        <!-- /item -->
-
-                    </div>
-                    <!-- /carousel-inner -->
-                    <a class="left carousel-control" href="#<?php echo $pro_category_name ?>" role="button"
-                       style="width: 0px;" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left slider"></span>
-                    </a>
-                    <a class="right carousel-control" href="#<?php echo $pro_category_name ?>" style="width: 0px;"
-                       role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right slider"></span>
-                    </a>
-                </div>
-                <!-- /thumbcarousel -->
-            </div>
-            <!-- /clearfix -->
-        </div>
 
     </div>
 
