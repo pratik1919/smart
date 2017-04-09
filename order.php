@@ -52,7 +52,7 @@ if (isset($_POST['order'])) {
             $mail->AddAddress('contactcareshop@gmail.com');
             $mail->Subject  =  'Product Order';
             $mail->IsHTML(true);
-            $mail->Body    = 'Hello Careshop,<br> A product order has been placed with following details:
+            $mail->Body    = 'Hello Smart Gallery,<br> A product order has been placed with following details:
 <br><br>Product Name: '.$item_name.'
 <br>Quantity: '.$quantity.'
 <br>Delivery Address: '.$delivery_address.'

@@ -21,6 +21,7 @@ include("config/db_connect.php");
 <div class="wrapper">
     <?php include('header.php') ?>
     <div class="subCatMenu">
+        Category:
         <?php
         $s_cat = subcat($_GET['id'], $connection);
         while ($row = $s_cat->fetch_assoc()){
@@ -41,18 +42,27 @@ include("config/db_connect.php");
         foreach($subcategoryList as $subcategory){
         ?>
 
-        <div class="col-lg-3" data-target="#carousel" data-slide-to="0">
+        <a href="display_product.php?p_id=<?php echo $subcategory['id']?>">
+        <div class="col-lg-3 productBox">
             <div id="box" style="background-image: url('itemImages/<?php echo $subcategory['image']?>')">
-                <div id="overlay">
-                    <a href="display_product.php?p_id=<?php echo $subcategory['id']?>"><button class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span> View</button></a>
-                </div>
             </div>
-            <div style="text-align: center;">
-                <h3><?php echo $subcategory['item_name'] ?></h3>
-                <h4><strike>Rs. <?php echo $subcategory['price'] ?>/-</strike></h4>
+            <div class="disc" style="text-align: center;">
+                <h3 style="margin-top: 0px;"><?php echo $subcategory['item_name'] ?></h3>
+                <?php
+                if($subcategory['price'] != ""){
+                    ?>
+                    <h4><strike>Rs. <?php echo $subcategory['price'] ?>/-</strike></h4>
+                <?php
+                }else{
+                    ?>
+                <h4> Fixed </h4>
+                  <?php
+                }
+                ?>
                 <h5>Rs.<?php echo $subcategory['discounted_price']?> /-</h5>
             </div>
         </div>
+        </a>
 
         <?php
         }

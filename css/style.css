@@ -238,7 +238,7 @@ body div {
     height: 200px;
     margin: 5% auto 0 auto;
     background-size: cover;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     overflow: hidden;
 }
 
@@ -292,10 +292,10 @@ body div {
 }
 
 .glass {
-    width: 275px;
+    width: 50%;
     height: 275px;
     position: absolute;
-    border-radius: 50%;
+    border-radius: 0px;
     cursor: crosshair;
 
     /* Multiple box shadows to achieve the glass effect */
@@ -425,7 +425,7 @@ body {
     background: #1f1b18;
     width: 100%;
     /*height:100px;*/
-    position: absolute;
+    /*position: absolute;*/
     bottom: 0;
     left: 0;
     padding: 15px;
@@ -524,10 +524,10 @@ body {
     font-size: 36px !important;
 }
 
-.add {
-    height: 480px;
-    width: 105px;
-    position: absolute;
+.add img{
+    max-height: 105px;
+    width: 100%;
+    margin: 5px;
 }
 
 .dropdown-menu .sub-menu a{
@@ -539,15 +539,15 @@ body {
     padding-right: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 20px;
-    text-align: center;
+    font-size: 14px;
+    /*text-align: center;*/
     background-color: rgba(243, 156, 18, 0.22);
     margin-bottom: 10px;
 }
 
 .subCatMenu a{
     text-decoration: none;
-    color: #aeaeae !important;
+    color: #797979 !important;
 }
 
 legend{
@@ -677,4 +677,17 @@ legend{
     margin-top: 15px;
     margin-right: 15px;
     z-index: 10;
+}
+
+.container{
+    width: 1130px !important;
+}
+
+.productBox:hover + .disc{
+    background-color: rgba(255, 69, 0, 0.58);
+    color: white;
+}
+
+.disc{
+    padding-top: 5px;
 }

@@ -101,31 +101,31 @@ if (mysqli_num_rows($result) > 0) {
     <?php require('header.php') ?>
     <div class="row" style="height: 50px"></div>
 
-    <div class="add" style="float:left; left: 1px;">
-        <?php $advertisement = getAdvertisement($connection,0);
-
-        ?>
-        <?php if($advertisement!=null){ ?>
-
-            <img style="width: 115px; height: 100%;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
-
-        <?php } ?>
-    </div>
-
-    <div class="add" style="float:right; right: 1px;">
+    <div class="add">
 
         <?php $advertisement = getAdvertisement($connection,1);
 
         ?>
         <?php if($advertisement){ ?>
 
-            <img style="width: 115px; height: 100%;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
+            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
 
         <?php } ?>
     </div>
 
 
     <div class="container">
+
+        <div class="add">
+            <?php
+            $advertisement = getAdvertisement($connection,0);
+            ?>
+            <?php if($advertisement!=null){ ?>
+                <img style="margin: 5px;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
+
+            <?php } ?>
+        </div>
+
         <div class="row">
             <div class="col-lg-6">
                 <div class="product">
@@ -133,21 +133,23 @@ if (mysqli_num_rows($result) > 0) {
                 </div>
             </div>
             <div class="col-lg-6">
-                <h1><?php echo $item_name?></h1>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5 style="color: red;"><strong>Rs <strike><?php echo $item_price?>/-</strike></strong></h5>
-                        <h3>Rs <?php echo $item_discounted_price?>/-</h3>
-                    </div>
-                    <div class="col-lg-6" style="text-align: right;">
-                        <!-- Your share button code -->
-                        <div class="fb-share-button"
-                             data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
-                             data-layout="button_count">
+                <div class="bg-info" style="padding: 2px 15px 5px 15px ;">
+                    <h1><?php echo $item_name?></h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5 style="color: red;"><strong>Rs <strike><?php echo $item_price?>/-</strike></strong></h5>
+                            <h3>Rs <?php echo $item_discounted_price?>/-</h3>
+                        </div>
+                        <div class="col-lg-6" style="text-align: right;">
+                            <!-- Your share button code -->
+                            <div class="fb-share-button"
+                                 data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
+                                 data-layout="button_count">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <fieldset>
+                <fieldset style="margin-top: 10px;">
                     <legend>Order Now</legend>
 
                     <form method="post" action="order.php" class="form-horizontal" onsubmit="return validate()">
@@ -215,7 +217,7 @@ if (mysqli_num_rows($result) > 0) {
 
         <div style="padding: 10px; background-color: whitesmoke; margin-top: 20px;">
             <h2>Description</h2>
-            <p style="font-family: 'Comfortaa', cursive;"><?php echo $item_description?> </p>
+            <p><?php echo $item_description?> </p>
         </div>
         <hr/>
 
@@ -383,8 +385,6 @@ if (mysqli_num_rows($result) > 0) {
             });
         });
     </script>
-
-    <div style="height: 650px;"></div>
 
     <?php require('footer.php') ?>
 </div>
