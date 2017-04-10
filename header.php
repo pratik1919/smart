@@ -51,6 +51,10 @@ while ($row = $link->fetch_assoc()) {
             -moz-box-shadow: 0px 6px 21px -6px rgba(0, 0, 0, 0.75);
             box-shadow: 0px 6px 21px -6px #64AEDC;
         }
+
+        .menu-icon{
+            color: black;
+        }
     </style>
     <script type="text/javascript">
         (function(d, s, id) {
@@ -183,7 +187,7 @@ while ($row = $link->fetch_assoc()) {
 
 </div>
 <div id="main">
-    <span style="font-size:30px;cursor:pointer; color: yellow;" onclick="openNav()">&#9776;</span>
+    <span class="menu-icon" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
     <span><a href="index.php"><img src="img/logo.png" height="70px" alt=""></a></span>
 </div>
 <div class="dropup" style="position: fixed; bottom: 10px; right: 10px; z-index: 10000000">

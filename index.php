@@ -74,7 +74,7 @@ include('config/db_connect.php');
                 }
                 ?>
                 <img id="featured-1" onclick="submitForm(this)" src="img/<?php echo $row['photo']; ?>" alt="">
-                <div class="row" style="margin: 0px">
+                <div class="white row" style="margin: 0px;">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
                         <span class="btn btn-default">Buy</span></div>
@@ -296,6 +296,7 @@ include('config/db_connect.php');
         <div class="product-section">
             <legend class="title">Best Sellers</legend>
 
+            <div class="row">
 
             <div class="col-md-3 col-sm-3 col-lg-3 pad">
                 <?php
@@ -418,8 +419,11 @@ include('config/db_connect.php');
                 </div>
             </div>
 
-<div class="row" style="height: 200px;"></div>
+            </div>
 
+<div class="row" style="height: 30px;"></div>
+
+            <div class="row">
             <div class="col-md-3 col-sm-3 col-lg-3 pad">
                 <?php
                 $prod = getProduct("BS-5", $connection);
@@ -539,6 +543,7 @@ include('config/db_connect.php');
                 </div>
             </div>
 
+        </div>
         </div>
     </div>
 
