@@ -22,7 +22,6 @@ include('config/db_connect.php');
 
 <form action="buy.php" id="read" method="post">
     <input type="hidden" id="positionId" name="positionId"/>
-    <input type="hidden" value="news" name="content"/>
 </form>
 
 <div class="wrapper">

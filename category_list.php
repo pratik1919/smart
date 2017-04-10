@@ -42,27 +42,31 @@ include("config/db_connect.php");
         foreach($subcategoryList as $subcategory){
         ?>
 
-        <a href="display_product.php?p_id=<?php echo $subcategory['id']?>">
+
         <div class="col-lg-3 productBox">
             <div id="box" style="background-image: url('itemImages/<?php echo $subcategory['image']?>')">
             </div>
-            <div class="disc" style="text-align: center;">
-                <h3 style="margin-top: 0px;"><?php echo $subcategory['item_name'] ?></h3>
-                <?php
-                if($subcategory['price'] != ""){
+            <div class="row white" style="margin: 0px">
+                <h4><?php echo $subcategory['item_name'] ?></h4>
+                <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
+                    <a href="display_product.php?p_id=<?php echo $subcategory['id']?>"><span class="btn btn-default">Buy</span></div></a>
+                <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
+                    <?php
+                    if($subcategory['price'] != ""){
+                        ?>
+                        <strike>Rs. <?php echo $subcategory['price'] ?>/-</strike>
+                        <?php
+                    }else{
+                        ?>
+                        Fixed
+                        <?php
+                    }
                     ?>
-                    <h4><strike>Rs. <?php echo $subcategory['price'] ?>/-</strike></h4>
-                <?php
-                }else{
-                    ?>
-                <h4> Fixed </h4>
-                  <?php
-                }
-                ?>
-                <h5>Rs.<?php echo $subcategory['discounted_price']?> /-</h5>
+                    <br>
+                    Rs <?php echo $subcategory['discounted_price']?>/-</div>
             </div>
         </div>
-        </a>
+
 
         <?php
         }

@@ -197,7 +197,7 @@ while ($row = $link->fetch_assoc()) {
 
 
 <div class="top-info">
-    <h6 style="padding: 9px; display: inline-block;"><i class="glyphicon glyphicon-phone"></i> Call : 985-1243865</h6>
+    <h6 style="padding: 9px; display: inline-block;">mobile / viber / imo:- 9801891313</h6>
 
 
     <ul class="nav navbar-nav noStyle">
