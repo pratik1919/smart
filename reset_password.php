@@ -1,6 +1,6 @@
 <?php
-include('../../common/common.php');
-include('../../config/db_connect.php');
+include('common/common.php');
+include('config/db_connect.php');
 
 if(isset($_POST['change'])) {
     $old_password = $_POST['oldPassword'];

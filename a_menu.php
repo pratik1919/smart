@@ -78,7 +78,7 @@
         </ul>
     </div><!-- /.close of nav-collapse -->
 </nav>
-<div class="row" style="height: 50px">
+<div class="row" style="height: 100px">
 </div>
 </body>
 </html>

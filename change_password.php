@@ -1,6 +1,6 @@
 <?php
-    include("../../common/common.php");
-    include("../../config/db_connect.php");
+    include("common/common.php");
+    include("config/db_connect.php");
 
 ?>
 <html>
@@ -32,9 +32,15 @@
 
     <form class="form-signin loginForm" method="post" action="controller/auth.php" enctype="multipart/form-data">
         <input type="hidden" value="change" name="formType">
-        <h2 style=" text-align: center; font-family: 'Pacifico', cursive;">Care Shop Nepal</h2>
-        <lable class="control-label" >Username and Password has been sent to  account</lable>
-        <input type="submit" class="btn btn-lg btn-primary btn-block" name="change" id="change" value="Change"/>
+        <div style="text-align: center;">
+            <a href="index.php">
+                <img src="img/logo.png" height="150px;" alt=""/>
+            </a>
+        </div>
+
+        <hr/>
+        <h5>Username and Password will be sent to  account</h5>
+        <input style="background-color: orangered; border-radius: 0px;" type="submit" class="btn btn-lg btn-primary btn-block" name="change" id="change" value="Change"/>
         <br/>
     </form>
 

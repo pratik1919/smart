@@ -49,6 +49,10 @@ if (isset($_POST['submit'])) {
     table tr td{
         text-align: right;
     }
+
+    tr{
+        margin: 5px 0px 5px 0px;
+    }
 </style>
 
 <body>
@@ -66,10 +70,10 @@ if (isset($_POST['submit'])) {
     </fieldset>
 
     <table style="width: 80%;">
-        <form method="post" action="#" >
+        <form class="form" method="post" action="#" >
             <tr>
                 <td>
-                    <button class="btn btn-mail"><span class="fa fa-gmail"></span></button>
+                    <span style="font-size: 35px; margin: 30px;" class="glyphicon glyphicon-envelope"></span>
                 </td>
                 <td>
                     <input type="email" class="form-control" name="mail" id="" value="<?php echo empty($email)?'NULL':$email; ?>"/>
@@ -77,7 +81,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <button class="btn btn-facebook"><span class="fa fa-facebook"></span></button>                </td>
+                    <span style="font-size: 35px; margin: 30px;" class="fa fa-facebook"></span>          </td>
                 <td>
                     <input type="text" class="form-control" name="facebook" id=""
                            value="<?php echo empty($facebook)?'NULL':$facebook ?>"/>
@@ -85,7 +89,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <button class="btn btn-twitter"><span class="fa fa-twitter"></span></button>
+                    <span style="font-size: 35px; margin: 30px;" class="fa fa-twitter"></span>
                 </td>
                 <td>
                     <input type="text" class="form-control" name="twitter" id="" value="<?php echo empty($twitter)?'NULL':$twitter ?>"/>
@@ -93,7 +97,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <button class="btn btn-instagram"><span class="fa fa-instagram"></span></button>                </td>
+                    <span style="font-size: 35px; margin: 30px;" class="fa fa-instagram"></span>          </td>
                 <td>
                     <input type="text" class="form-control" name="instagram" id=""
                            value="<?php echo empty($instagram)?'NULL':$instagram ?>"/>
@@ -101,7 +105,7 @@ if (isset($_POST['submit'])) {
             </tr>
             <tr>
                 <td>
-                    <button class="btn btn-google"><span class="fa fa-youtube"></span></button>                </td>
+                    <span style="font-size: 35px; margin: 30px;" class="fa fa-youtube"></span>              </td>
                 <td>
                     <input type="text" class="form-control" name="youtube" id="" value="<?php echo empty($youtube)?'NULL':$youtube ?>"/>
                 </td>

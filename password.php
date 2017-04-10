@@ -37,7 +37,9 @@ if (empty($_SESSION['username'])) {
                 <input type="submit" class="btn btn-default" name="change" id="change" value="Submit"/>
             </form>
         </div>
-        <?php require('a_footer.php') ?>
+
+<!--        --><?php //require('a_footer.php') ?>
+
     </div>
     </body>
     </html>

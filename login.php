@@ -29,18 +29,34 @@ if(!empty($_SESSION['username'])){
 <div class="container" style="display: flex; height: 80%; justify-content: center; align-items: center;">
 
     <form class="form-signin loginForm" id="login-form">
+        <div style="text-align: center;">
+            <a href="index.php">
+                <img src="img/logo.png" height="150px;" alt=""/>
+            </a>
+        </div>
+
+        <hr/>
         <input type="hidden" name="login" value="login">
-        <h2>Smart Gallery</h2>
-        <!--        <label for="username" class="sr-only">Username</label>-->
-        <input type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
-        <!--        <label for="inputPassword" class="sr-only">Password</label>-->
-        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="signIn" name="login">Sign in</button>
+
+        <div>
+        <div class="form-group">
+            <label for="">Username</label>
+            <input style="border-radius: 0px;" type="text" id="username" class="form-control" placeholder="Username" name="username" required autofocus>
+        </div>
+
+        <div class="form-group">
+            <label for="">Password</label>
+            <input style="border-radius: 0px;" type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+        </div>
+
+        <button style="background-color: orangered; border-radius: 0px;" class="btn btn-lg btn-primary btn-block" type="button" id="signIn" name="login">Sign in</button>
         <br/>
         <a href="change_password.php">Forgot Password</a>
     </form>
     <div class="row">
     </div>
+
+
 </div>
 <?php
 ?>
