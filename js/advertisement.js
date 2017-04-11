@@ -16,12 +16,12 @@ function deleteAd(id){
                 n.close();
                 $.ajax({
                     type:"POST",
-                    url:'../../controller/advertisement.php',
+                    url:'controller/advertisement.php',
                     data:"formType="+mode+"&id="+id,
                     success:function(data){
                         var data = JSON.parse(data);
 
-                        if(data.message=='success'){
+                        if(data){
                             displayMessage("Successfully Deleted","success");
                             customReloadWindow(2000)
                         }
@@ -48,7 +48,7 @@ function editAdvertisement(id){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/advertisement.php',
+        url:'controller/advertisement.php',
         data:"edit="+mode+"&id="+id,
         success:function(data){
 

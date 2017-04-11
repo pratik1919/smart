@@ -122,7 +122,7 @@ if(empty($_SESSION['username'])){
 
     <div class="container" style="width: 700px;">
         <div class="row" style="margin-bottom: 20px;">
-            <button class="btn btn-success" data-toggle="modal" data-target="#addCategory">Add Category</button>
+            <button class="btn btn-success" data-toggle="modal" id="addCatBtn">Add Category</button>
 
         </div>
 
@@ -190,5 +190,14 @@ if(empty($_SESSION['username'])){
 
     <?php require('a_footer.php') ?>
 </div>
+
+<script>
+
+    $('#addCatBtn').click(function () {
+
+        $('#addCategory').find('form')[0].reset();
+        $('#addCategory').modal('show');
+    });
+</script>
 </body>
 </html>

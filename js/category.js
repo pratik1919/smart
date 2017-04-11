@@ -8,15 +8,14 @@ function addCategory(){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/category.php',
+        url:'controller/category.php',
         data:data,
         success:function(data){
             var data = JSON.parse(data);
 
-
-            if(data.message=='success'){
+            if(data){
                 displayMessage("successfully added","success");
-               customReloadWindow(2000)
+                customReloadWindow(2000)
 
             }else{
                 displayMessage("Error while saving","error")
@@ -42,12 +41,12 @@ function deleteCategory(id,name){
                 n.close();
                 $.ajax({
                     type:"POST",
-                    url:'../../controller/category.php',
+                    url:'controller/category.php',
                     data:"formType="+mode+"&id="+id,
                     success:function(data){
                         var data = JSON.parse(data);
 
-                        if(data.message=='success'){
+                        if(data){
                             displayMessage("Successfully Deleted","success");
                             customReloadWindow(2000)
                         }
@@ -85,12 +84,12 @@ function updateCategory(){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/category.php',
+        url:'controller/category.php',
         data:data,
         success:function(data){
             var data = JSON.parse(data);
 
-            if(data.message=='success'){
+            if(data){
                 displayMessage("successfully updated","success");
                 customReloadWindow(2000)
 

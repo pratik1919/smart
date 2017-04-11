@@ -3,7 +3,7 @@
  */
 
 function addSubCategory(id){
-
+    $('#addSubCategory').find('form')[0].reset();
     $('#addSubCategory').modal('show');
     $('#ca_id').attr('value',id);
 
@@ -23,7 +23,7 @@ function deleteSubCat(id){
                 n.close();
                 $.ajax({
                     type:"POST",
-                    url:'../../controller/subcategory.php',
+                    url:'controller/subcategory.php',
                     data:"formType="+mode+"&id="+id,
                     success:function(data){
                         var data = JSON.parse(data);
@@ -56,7 +56,7 @@ function saveSubCategory(){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/subcategory.php',
+        url:'controller/subcategory.php',
         data:data,
         success:function(data){
             var data = JSON.parse(data);
@@ -94,7 +94,7 @@ function updateSubCat(){
     var data = $('#subcategory_form').serialize();
     $.ajax({
         type:"POST",
-        url:'../../controller/subcategory.php',
+        url:'controller/subcategory.php',
         data:data,
         success:function(data){
             var data = JSON.parse(data);

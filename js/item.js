@@ -8,7 +8,7 @@ function saveItem(){
 
     $.ajax({
         type:"POST",
-        url:'../../controller/item.php',
+        url:'controller/item.php',
         data:data,
         success:function(data){
             var data = JSON.parse(data);
@@ -40,7 +40,7 @@ function checkItemName(){
         success:function(data){
             var data = JSON.parse(data);
 
-            if(data.message=='duplicate'){
+            if(data){
                 displayMessage("Duplicate Item Name","error")
                 $('#save').attr('disabled',true);
             }else{
@@ -72,7 +72,7 @@ function deleteItem(id){
                     success:function(data){
                         var data = JSON.parse(data);
 
-                        if(data.message=='success'){
+                        if(data){
                             displayMessage("Successfully Deleted","success");
                             customReloadWindow(2000)
                         }

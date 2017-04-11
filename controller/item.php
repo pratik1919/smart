@@ -77,8 +77,6 @@ else if($_POST['formType']=='delete'){
 
     $id = $_POST['id'];
 
-    $result = array();
-
     $result = deleteProduct($connection,$id);
 
     echo json_encode($result);
@@ -87,8 +85,6 @@ else if($_POST['formType']=='delete'){
 else if($_POST['formType']=='checkItemName'){
 
     $itemName = $_POST['itemName'];
-
-    $result = array();
 
     $result = checkDuplicateItem($connection,$itemName);
 

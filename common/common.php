@@ -136,15 +136,7 @@ function deleteProduct($connection,$id){
 
     $result = mysqli_query($connection,$delete_item);
 
-    $data = array();
-
-    if($result){
-        $data['message']='success';
-    }else{
-        $data['message']='fail';
-    }
-
-    return $data;
+    return $result;
 
 }
 
@@ -197,16 +189,7 @@ function addCategory($connection,$categoryName){
 
     $result = mysqli_query($connection,$create_category);
 
-    $data = array();
-
-    if($result){
-        $data['message']='success';
-    }else{
-        $data['message']=$create_category;
-    }
-
-    return $data;
-
+    return $result;
 
 }
 
@@ -217,15 +200,7 @@ function updateCategory($connection,$category, $c_id){
     $update_subcategory = "UPDATE category SET category_name = '$category',updated_date='$update_date' WHERE id='$c_id'; ";
     $result = mysqli_query($connection,$update_subcategory);
 
-    $data = array();
-
-    if($result){
-        $data['message']='success';
-    }else{
-        $data['message']='error';
-    }
-
-    return $data;
+    return $result;
 
 }
 
@@ -235,15 +210,7 @@ function deleteCategory($connection,$id){
 
     $result = mysqli_query($connection,$delete_subcategory);
 
-    $data = array();
-
-    if($result){
-        $data['message']='success';
-    }else{
-        $data['message']='fail';
-    }
-
-    return $data;
+    return $result;
 
 }
 
@@ -373,20 +340,12 @@ function checkDuplicateItem($connection,$itemName){
 
     $result = mysqli_query($connection,$select_itemNameList);
 
-    $message = array();
-    $data = array();
-
-    while($row = mysqli_fetch_assoc($result)){
-         $data['item_name'] = $row['item_name'];
+    if($result->num_rows > 0){
+        return true;
     }
-
-    if(count($data)>0){
-        $message['message'] = 'duplicate';
-    }else{
-        $message['message'] = 'single';
+    else{
+        return false;
     }
-
-    return $message;
 }
 
 function checkDuplicateProduct($connection,$productName){
@@ -649,15 +608,7 @@ function deleteAdvertisement($connection,$id){
 
     $result = mysqli_query($connection,$delete_ad);
 
-    $data = array();
-
-    if($result){
-        $data['message']='success';
-    }else{
-        $data['message']='fail';
-    }
-
-    return $data;
+    return $result;
 }
 function editAdvertisement($connection,$id){
 
