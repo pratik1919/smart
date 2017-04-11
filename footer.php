@@ -52,7 +52,7 @@
             <div>
                 <dl class="dl-horizontal">
                     <dt style="margin-left: 0px;"><span class="glyphicon glyphicon-info-sign"></span></dt>
-                    <dd>-Opposite of Petrol Pump</dd>
+                    <dd>Opposite of Petrol Pump</dd>
                     <dt><span class="glyphicon glyphicon-phone"></span></dt>
                     <dd>9801891313</dd>
                     <dt><span class="glyphicon glyphicon-envelope"></span></dt>
@@ -65,7 +65,7 @@
         </div>
         </div>
         <div style="width: 100%; padding: 5px;">
-            All rights reserved <?php echo date('o'); ?>
+            Copyright &copy <?php echo date("Y"); ?> Smart Gallery. All rights reserved.
         </div>
     </div>
     </div>
