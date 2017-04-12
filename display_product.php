@@ -116,15 +116,6 @@ if (mysqli_num_rows($result) > 0) {
 
     <div class="container">
 
-        <div class="add">
-            <?php
-            $advertisement = getAdvertisement($connection,0);
-            ?>
-            <?php if($advertisement!=null){ ?>
-                <img style="margin: 5px;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
-
-            <?php } ?>
-        </div>
 
         <div class="row">
             <div class="col-lg-6">

@@ -168,6 +168,15 @@ include('config/db_connect.php');
 
         <div class="row"></div>
 
+        <div class="add" style="margin-top: 15px;">
+            <?php
+            $advertisement = getAdvertisement($connection,0);
+            ?>
+            <?php if($advertisement!=null){ ?>
+                <img style="margin: 5px;" src="advertisement/<?php echo $advertisement['advertise_image']?>">
+
+            <?php } ?>
+        </div>
         <div class="row">
             <legend class="title">Latest Products</legend>
 

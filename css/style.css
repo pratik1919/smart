@@ -537,7 +537,7 @@ body {
 .add img{
     max-height: 105px;
     width: 100%;
-    margin: 5px;
+    margin-top: 5px;
 }
 
 .dropdown-menu .sub-menu a{
