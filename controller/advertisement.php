@@ -31,7 +31,7 @@ if(isset($_POST['advertisement'])){
         move_uploaded_file($image_tmp,"../advertisement/$image");
     }
 
-    header("Location:../view/admin/advertise.php");
+    header("Location:../advertise.php");
 }
 
 

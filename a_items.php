@@ -189,6 +189,7 @@ if(empty($_SESSION['username'])) {
 
         $('#itemButton').click(function(){
 
+            $('#AddProduct').find('form')[0].reset();
             $('#AddProduct').modal('show');
             $('#AddProduct .modal-title').html('Add Product');
             $('#AddProduct button[type=submit]').html("Add");

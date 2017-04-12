@@ -79,6 +79,14 @@
                 </div>
             </div>
         </div>
+        <div class="col-lg-8">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.2762915344056!2d85.33590141465704!3d27.73962288277856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19467f963017%3A0x3ca234d8a2bf0cd2!2ssmart+gallery!5e0!3m2!1sen!2snp!4v1490339876383" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        </div>
+        <div style="width: 100%; padding: 5px;">
+            Copyright &copy <?php echo date("Y"); ?> Smart Gallery. All rights reserved.
+        </div>
+    </div>
 
     </div>
     </div>
