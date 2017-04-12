@@ -56,14 +56,19 @@ while ($row = $link->fetch_assoc()) {
             color: black;
         }
     </style>
-    <script type="text/javascript">
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+<!--    <script type="text/javascript">-->
+<!--        (function(d, s, id) {-->
+<!--            var js, fjs = d.getElementsByTagName(s)[0];-->
+<!--            if (d.getElementById(id)) return;-->
+<!--            js = d.createElement(s); js.id = id;-->
+<!--            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";-->
+<!--            fjs.parentNode.insertBefore(js, fjs);-->
+<!--        }(document, 'script', 'facebook-jssdk'));-->
+<!--    </script>-->
+
+    <script type='text/javascript'>
+        (function() { var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//d2yy16lkdmfg04.cloudfront.net/resource/facebookchat.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })(); window.embeddedChatFacebookAsyncInit = function() { embeddedChatFacebook.init("9205"); }
     </script>
 
 </head>
@@ -190,11 +195,36 @@ while ($row = $link->fetch_assoc()) {
     <span class="menu-icon" style="font-size:30px;cursor:pointer;" onclick="openNav()">&#9776;</span>
     <span><a href="index.php"><img src="img/logo.png" height="70px" alt=""></a></span>
 </div>
-<div class="dropup" style="position: fixed; bottom: 10px; right: 10px; z-index: 10000000">
-    <button class="btn btn-facebook dropdown-toggle" type="button" data-toggle="dropdown">
-        <span class="fa fa-flash"></span></button>
+<div class="dropup" style="position: fixed; bottom: 40px; right: 5px; z-index: 10000000">
+    <button style="background-color: yellow;" class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+        <span class="fa fa-dollar"> Sell Your Product</span></button>
     <div class="dropdown-menu" style="margin-left: -343px; width: 342px;">
-        <div class="fb-page" data-href="https://www.facebook.com/smartgallery.com.np/" data-tabs="timeline" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Care-Shop-Nepal-971713859591068/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Care-Shop-Nepal-971713859591068/"></a></blockquote></div>
+        <div style="padding: 10px;">
+            <legend>Sell your product</legend>
+            <form action="">
+                <div class="form-group">
+                    <label for="">Product Name</label>
+                    <input type="text" class="form-control" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Description</label> <br>
+                    <textarea class="form-control" name="desc" id="" cols="30" rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Product Photo</label>
+                    <input class="form-group" type="file" name="photo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="">Contact no.</label>
+                    <input class="form-control" type="number" name="contact" required>
+                </div>
+
+                <input class="btn btn-success btn-block" type="submit" value="Send Us Your Product">
+            </form>
+        </div>
     </div>
 </div>
 

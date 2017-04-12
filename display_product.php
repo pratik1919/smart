@@ -153,8 +153,11 @@ if (mysqli_num_rows($result) > 0) {
                         <div class="col-lg-6" style="text-align: right;">
                             <!-- Your share button code -->
                             <div class="fb-share-button"
-                                 data-href="http://careshopnepal.com/view/user/displayProductView.php?p_id=<?php echo $i_id ?>"
+                                 data-href="http://smartgallery/displayProductView.php?p_id=<?php echo $i_id ?>"
                                  data-layout="button_count">
+                            </div>
+                            <div style="margin-top: 5px;">
+                                <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                             </div>
                         </div>
                     </div>
