@@ -101,22 +101,20 @@ if (mysqli_num_rows($result) > 0) {
     <?php require('header.php') ?>
     <div class="row" style="height: 50px"></div>
 
-    <div class="add">
-
-        <?php $advertisement = getAdvertisement($connection,1);
-
-        ?>
-        <?php if($advertisement){ ?>
-
-            <img src="advertisement/<?php echo $advertisement['advertise_image']?>">
-
-        <?php } ?>
-    </div>
+<!--    <div class="add">-->
+<!---->
+<!--        --><?php //$advertisement = getAdvertisement($connection,1);
+//
+//        ?>
+<!--        --><?php //if($advertisement){ ?>
+<!---->
+<!--            <img src="advertisement/--><?php //echo $advertisement['advertise_image']?><!--">-->
+<!---->
+<!--        --><?php //} ?>
+<!--    </div>-->
 
 
     <div class="container">
-
-
         <div class="row">
             <div class="col-lg-6">
                 <div class="product">

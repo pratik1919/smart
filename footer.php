@@ -21,7 +21,7 @@
 
             <div class="col-md-3">
 
-                <h2>Pay us on</h2>
+                <a href="payment.php"><h2>Pay us on</h2></a>
                 <img src="img/IMElogo.png" height="50px;" alt="">
                 <img src="img/Capture.png" height="50px;" alt="">
 
@@ -57,22 +57,22 @@
 
                 <div class="row">
                     <div class="col-md-3 col-lg-3 col-sm-3">
-                        <a href="" class="btn btn-facebook">
+                        <a href="<?php echo $facebook ?>" class="btn btn-facebook">
                             <span class="fa fa-facebook"></span>
                         </a>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-3">
-                        <a href="" class="btn btn-twitter">
+                        <a href="<?php echo $twitter ?>" class="btn btn-twitter">
                             <span class="fa fa-twitter"></span>
                         </a>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-3">
-                        <a href="" class="btn btn-instagram">
+                        <a href="<?php echo $instagram ?>" class="btn btn-instagram">
                             <span class="fa fa-instagram"></span>
                         </a>
                     </div>
                     <div class="col-md-3 col-lg-3 col-sm-3">
-                        <a href="" class="btn btn-google">
+                        <a href="<?php echo $youtube ?>" class="btn btn-google">
                             <span class="fa fa-youtube-play"></span>
                         </a>
                     </div>

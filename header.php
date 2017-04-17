@@ -250,19 +250,19 @@ while ($row = $link->fetch_assoc()) {
 
     <div class="social-media">
         <div>
-            <a class="btn">
+            <a class="btn" href="<?php echo $facebook ?>">
                 <span class="fa fa-facebook"></span>
             </a>
 
-            <a class="btn">
+            <a class="btn" href="<?php echo $twitter ?>">
                 <span class="fa fa-twitter"></span>
             </a>
 
-            <a class="btn">
+            <a class="btn" href="<?php echo $instagram ?>">
                 <span class="fa fa-instagram"></span>
             </a>
 
-            <a class="btn">
+            <a class="btn" href="<?php echo $youtube ?>">
                 <span class="fa fa-youtube"></span>
             </a>
         </div>

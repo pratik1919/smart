@@ -73,11 +73,11 @@ include('config/db_connect.php');
                     <?php
                 }
                 ?>
-                <img id="featured-1" onclick="submitForm(this)" src="img/<?php echo $row['photo']; ?>" alt="">
+                <img src="img/<?php echo $row['photo']; ?>" alt="">
                 <div class="white row" style="margin: 0px;">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="featured-1" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -100,11 +100,11 @@ include('config/db_connect.php');
                     <?php
                 }
                 ?>
-                <img id="featured-2" onclick="submitForm(this)" src="img/<?php echo $row['photo']; ?>" alt="">
+                <img src="img/<?php echo $row['photo']; ?>" alt="">
                 <div class="row" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="featured-2" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -126,11 +126,11 @@ include('config/db_connect.php');
                     <?php
                 }
                 ?>
-                <img id="featured-3" onclick="submitForm(this)" src="img/<?php echo $row['photo']; ?>" alt="">
+                <img src="img/<?php echo $row['photo']; ?>" alt="">
                 <div class="row" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="featured-3" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -153,11 +153,11 @@ include('config/db_connect.php');
                     <?php
                 }
                 ?>
-                <img id="featured-4" onclick="submitForm(this)" src="img/<?php echo $row['photo']; ?>" alt="">
+                <img src="img/<?php echo $row['photo']; ?>" alt="">
                 <div class="row" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="featured-4" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -206,7 +206,7 @@ include('config/db_connect.php');
                     <div class="row white" style="margin: 0px">
                         <h4><?php echo $row['name']; ?></h4>
                         <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                            <span class="btn btn-default">Buy</span></div>
+                            <span class="btn btn-default" id="LP-1" onclick="submitForm(this)">Buy</span></div>
                         <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                             Rs <?php echo $row['price']; ?>/-</div>
                     </div>
@@ -235,7 +235,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="LP-2" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -264,7 +264,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="LP-3" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -293,7 +293,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="LP-4" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -330,7 +330,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-1" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -360,7 +360,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-2" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -392,7 +392,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-3" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -422,7 +422,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-4" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -456,7 +456,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-5" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -486,7 +486,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-6" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -516,7 +516,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-7" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
@@ -546,7 +546,7 @@ include('config/db_connect.php');
                 <div class="row white" style="margin: 0px">
                     <h4><?php echo $row['name']; ?></h4>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
-                        <span class="btn btn-default">Buy</span></div>
+                        <span class="btn btn-default" id="BS-8" onclick="submitForm(this)">Buy</span></div>
                     <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                         Rs <?php echo $row['price']; ?>/-</div>
                 </div>
