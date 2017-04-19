@@ -1,5 +1,5 @@
 <?php
-include("../../config/db_connect.php");
+include("config/db_connect.php");
 
 
 /**
@@ -34,48 +34,47 @@ if (isset($_POST['order'])) {
             }
 
 
-            require_once('../../PHPMailer/PHPMailerAutoload.php');
+            require_once('PHPMailer/PHPMailerAutoload.php');
             $mail = new PHPMailer();
             $mail->CharSet =  "utf-8";
 // enable SMTP authentication
 
 //$mail->SMTPDebug = 1;
 // GMAIL username
-            $mail->Username = "contactcareshop@gmail.com";
+            $mail->Username = "budhasanjeev@gmail.com";
 // GMAIL password
             $mail->Password = "CareShop123";
             $mail->SMTPSecure = "ssl";
 // sets GMAIL as the SMTP server
 // set the SMTP port for the GMAIL server
-            $mail->From='contactcareshop@gmail.com';
+            $mail->From='budhasanjeev@gmail.com';
             $mail->FromName='Care Shop Nepal';
-            $mail->AddAddress('contactcareshop@gmail.com');
+            $mail->AddAddress('budhasanjeev@gmail.com');
             $mail->Subject  =  'Product Order';
             $mail->IsHTML(true);
             $mail->Body    = 'Hello Smart Gallery,<br> A product order has been placed with following details:
-<br><br>Product Name: '.$item_name.'
-<br>Quantity: '.$quantity.'
-<br>Delivery Address: '.$delivery_address.'
-<br>Date Within: '.$within_date.'
-<br>Additional Query: '.$any_query.'
-<br><br>Client Name:'.$name.'
-<br>Contact No.: '.$contact_number.'
-<br><br>'.$thanks.'
-<br>'.$thanks1;
-            if($mail->Send())
+                <br><br>Product Name: '.$item_name.'
+                <br>Quantity: '.$quantity.'
+                <br>Delivery Address: '.$delivery_address.'
+                <br>Date Within: '.$within_date.'
+                <br>Additional Query: '.$any_query.'
+                <br><br>Client Name:'.$name.'
+                <br>Contact No.: '.$contact_number.'
+                <br><br>'.$thanks.'
+                <br>'.$thanks1;
+
+            if($mail->send())
             {
-                echo "<script>window.open('../user/home.php','_self')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
                 echo 'Ordered successfully.' ;
             }
             else
             {
-                echo "<script>window.open('../user/home.php','_self')</script>";
+                echo "<script>window.open('index.php','_self')</script>";
                 echo "Mail Error - >".$mail->ErrorInfo;
             }
         } else {
             echo "Not Ordered";
         }
-
-
 
 }

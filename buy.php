@@ -62,7 +62,7 @@ $pos = $_POST['positionId'];
                 <fieldset style="margin-top: 10px;">
                     <legend>Order Now</legend>
 
-                    <form method="post" action="order.php" class="form-horizontal" onsubmit="return validate()">
+                    <form method="post" action="order1.php" class="form-horizontal" onsubmit="return validate()">
                         <div class="form-group">
                             <label class="control-label col-sm-4">Delivery Address<span
                                         style="color:red;"> *</span></label>
