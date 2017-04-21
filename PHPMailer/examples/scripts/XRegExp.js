@@ -259,7 +259,7 @@ if (XRegExp) {
 
 
     //---------------------------------
-    //  Overriden native methods
+    //  Overridden native methods
     //---------------------------------
 
     // Adds named capture support (with backreferences returned as `result.name`), and fixes two
@@ -359,7 +359,7 @@ if (XRegExp) {
             result = nativ.replace.call(this + "", search, function () {
                 if (captureNames) {
                     // Change the `arguments[0]` string primitive to a String object which can store properties
-                    arguments[0] = String(arguments[0]);
+                    arguments[0] = new String(arguments[0]);
                     // Store named backreferences on `arguments[0]`
                     for (var i = 0; i < captureNames.length; i++) {
                         if (captureNames[i])

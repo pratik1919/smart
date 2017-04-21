@@ -201,7 +201,7 @@ while ($row = $link->fetch_assoc()) {
     <div class="dropdown-menu" style="margin-left: -343px; width: 342px;">
         <div style="padding: 10px;">
             <legend>Sell your product</legend>
-            <form action="">
+            <form action="controller/sellYourProduct.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="">Product Name</label>
                     <input type="text" class="form-control" name="name" required>
@@ -222,7 +222,7 @@ while ($row = $link->fetch_assoc()) {
                     <input class="form-control" type="number" name="contact" required>
                 </div>
 
-                <input class="btn btn-success btn-block" type="submit" value="Send Us Your Product">
+                <input class="btn btn-success btn-block" type="submit" name="submit" value="Send Us Your Product">
             </form>
         </div>
     </div>
