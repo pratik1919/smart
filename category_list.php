@@ -43,7 +43,7 @@ include("config/db_connect.php");
         ?>
 
 
-        <div class="col-lg-3 productBox">
+        <div class="col-lg-3 col-md-3 col-sm-3 productBox">
             <div id="box" style="background-image: url('itemImages/<?php echo $subcategory['image']?>')">
             </div>
             <div class="row white" style="margin: 0px">

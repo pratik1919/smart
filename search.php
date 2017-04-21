@@ -11,7 +11,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>CareShopNepal</title>
+    <title>Smart Gallery</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
 
 
         <fieldset>
-            <legend><h3 class="catagory" style="font-family: 'Pacifico', cursive;">Search Result</h3></legend>
+            <legend><h3 class="catagory">Search Result</h3></legend>
         </fieldset>
         <?php
         $searchItem = $_POST['searchItem'];
@@ -38,35 +38,30 @@
             foreach ($itemList as $item) {
                 ?>
 
-                <div class="col-lg-3" data-target="#carousel" data-slide-to="0">
+                <div class="col-lg-3 col-md-3 col-sm-3 productBox" style="margin-top: 10px">
                     <div id="box" style="background-image: url('itemImages/<?php echo $item['image']?>')">
-                        <div id="overlay">
-                            <a href="display_product.php?p_id=<?php echo $item['id']?>">
-                                <button class="btn btn-success"><span class="glyphicon glyphicon-eye-open"></span> View
-                                </button>
-                            </a>
-                        </div>
                     </div>
-                    <div style="text-align: center;">
-                        <?php
-                        if ($item['discounted_price'] < $item['price']){
-                            ?>
-                            <h3><?php echo $item['item_name'] ?></h3>
-                            <h5 style="color: red;">Rs <strike><?php echo $item['price'] ?></strike>
-                            </h5>
-
-                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
+                    <div class="row white" style="margin: 0px">
+                        <h4><?php echo $item['item_name'] ?></h4>
+                        <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: left;">
+                            <a href="display_product.php?p_id=<?php echo $item['id']?>"><span class="btn btn-default">Buy</span></div></a>
+                        <div class="col-md-6 col-sm-6 col-lg-6" style="text-align: right;">
                             <?php
-                        }else {
+                            if($item['price'] != ""){
+                                ?>
+                                <strike>Rs. <?php echo $item['price'] ?>/-</strike>
+                                <?php
+                            }else{
+                                ?>
+                                Fixed
+                                <?php
+                            }
                             ?>
-                            <h3><?php echo $item['item_name'] ?></h3>
-                            <h5>Rs <?php echo $item['discounted_price'] ?></h5>
-
-                            <?php
-                        }
-                        ?>
+                            <br>
+                            Rs <?php echo $item['discounted_price'] ?>/-</div>
                     </div>
                 </div>
+
 
             <?php
             }
